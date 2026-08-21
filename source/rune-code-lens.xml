@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
+    <chapter xml:id="code-lens">
+        <title>Code Lens</title>
+
+        <p>
+            CodeLens is an interactive tool for following program execution,
+            much like a debugger, without the ability to influence flow control
+            or variable values.
+            For use without a server, traces must be computed beforehand.
+            First, we have some trivial programs, to provide minimal testing.
+        </p>
+
+        <listing xml:id="program-codelens-python">
+            <title>A Python program, stepable with CodeLens</title>
+
+            <program label="python-hello-world-code-lens" interactive="codelens" language="python">
+                <code>
+                print('Hello, World!')
+                </code>
+            </program>
+        </listing>
+
+        <listing xml:id="program-codelens-c">
+            <title>An C program, stepable with CodeLens</title>
+
+            <program label="c-hello-world-code-lens" interactive="codelens" language="c">
+                <code>
+                #include &lt;stdio.h&gt;
+
+                int main(void)
+                {
+                    puts("Hello, World!");
+                }
+                </code>
+            </program>
+        </listing>
+
+        <listing xml:id="program-codelens-java">
+            <title>A Java program, stepable with CodeLens</title>
+
+            <program label="java-hello-world-code-lens" interactive="codelens" language="java">
+                <code>
+                public class HelloWorld {
+                    public static void main(String[] args) {
+                        System.out.println("Hello, World!");
+                    }
+                }
+                </code>
+            </program>
+        </listing>
+
+        <p>
+            Codelens interactives can be given one or more checkpoints where the
+            user is asked a question as the code is executed:
+        </p>
+
+        <listing xml:id="program-codelens-python-questions">
+            <title>
+                A Python program, stepable with CodeLens, with questions
+            </title>
+
+            <program label="python-code-lens-questions" interactive="codelens" language="python">
+                <code>
+                def foo(n):
+                    n = n + 1
+                    return n
+                x = 7
+                y = x // 3
+                z = foo(y)
+                </code>
+                <checkpoint line="4" answer="x">
+                    <prompt>What variable is being assigned to?</prompt>
+                </checkpoint>
+                <checkpoint line="5" answer-variable="globals.y">
+                    <prompt>
+                        What value will be assigned to
+                        <c>y</c>
+                        ?
+                    </prompt>
+
+                    <feedback>
+                        <c>//</c>
+                        does integer division
+                    </feedback>
+                </checkpoint>
+                <checkpoint line="3" answer-variable="current_frame.n">
+                    <prompt>What value will be returned?</prompt>
+                    <feedback>
+                        What is
+                        <c>n</c>
+                        right now?
+                    </feedback>
+                </checkpoint>
+            </program>
+        </listing>
+
+        <p>
+            If a Codelens contains checkpoints, it is also possible to make it
+            into an exercise.
+            For use on Runestone, there should be an <attr>label</attr> on the
+            exercise:
+        </p>
+
+        <exercise label="program-codelens-cpp-questions">
+            <title>A C++ program as CodeLens exercise</title>
+
+            <statement>
+                Run the codelens and answer the questions it asks.
+            </statement>
+
+            <program interactive="codelens" language="cpp">
+                <code><![CDATA[
+                  int foo() {
+                      int x = 2;
+                      int y = ++x;
+                      return y;
+                  }
+                  int main() {
+                      int x = foo();
+                      while (x < 20) {
+                        x *= 2;
+                      }
+                  }
+                  ]]>
+                </code>
+                <checkpoint line="3" answer="3">
+                    <prompt>
+                        What value will be assigned to
+                        <c>y</c>
+                        ?
+                    </prompt>
+
+                    <feedback>
+                        <c>++</c>
+                        has precedence over
+                        <c>=</c>
+                    </feedback>
+                </checkpoint>
+                <checkpoint line="9" answer-variable="current_frame.x">
+                    <prompt>
+                        What value will be assigned to
+                        <c>x</c>
+                        ?
+                    </prompt>
+
+                    <feedback>
+                        We are doubling it
+                    </feedback>
+                </checkpoint>
+            </program>
+        </exercise>
+
+        <p>
+            Now some moderately more complicated programs to find the prime
+            numbers less than <m>20</m>.
+            We do not vouch for the quality of these, or even their correctness!
+        </p>
+
+        <exercise xml:id="sieve-primes">
+            <title>The Sieve of Eratosthenes</title>
+
+            <idx><h>Sieve of Eratosthenes</h></idx>
+            <statement>
+                <p>
+                    One method of computing all of the prime numbers less than a
+                    certain fixed positive integer <m>N</m> is to list all of
+                    the numbers <m>n</m> such that <m>1 \lt n \lt N</m>.
+                    Begin by eliminating all of the multiples of 2.
+                    Next eliminate all of the multiples of 3.
+                    Now eliminate all of the multiples of 5.
+                    Notice that 4 has already been crossed out.
+                    Continue in this manner, noticing that we do not have to go
+                    all the way to <m>N</m>; it suffices to stop at
+                    <m>\sqrt{N}</m>.
+                    Using this method, compute all of the prime numbers less
+                    than <m>N = 250</m>.
+                    We can also use this method to find all of the integers that
+                    are relatively prime to an integer <m>N</m>.
+                    Simply eliminate the prime factors of <m>N</m> and all of
+                    their multiples.
+                    Using this method, find all of the numbers that are
+                    relatively prime to <m>N= 120</m>.
+                    Using the Sieve of Eratosthenes, write a program that will
+                    compute all of the primes less than an integer <m>N</m>.
+                </p>
+            </statement>
+        </exercise>
+
+        <listing xml:id="sieve-python">
+            <title>
+                <url href="https://www.tutorialspoint.com/python-program-for-sieve-of-eratosthenes" visual="www.tutorialspoint.com/python-program-for-sieve-of-eratosthenes">Sieve of Eratosthenes</url>,
+                Java
+            </title>
+
+            <program label="sieve-codelens-python" interactive="codelens" language="python" starting-step="73">
+                <code><![CDATA[
+                def SieveOfEratosthenes(n):
+                   # array of type boolean with True values in it
+                   prime = [True for i in range(n + 1)]
+                   p = 2
+                   while (p * p <= n):
+                      # If it remain unchanged it is prime
+                      if (prime[p] == True):
+                         # updating all the multiples
+                         for i in range(p * 2, n + 1, p):
+                            prime[i] = False
+                      p += 1
+                   prime[0]= False
+                   prime[1]= False
+                   # Print
+                   for p in range(n + 1):
+                      if prime[p]:
+                         print (p,end=" ")
+                # main
+                if __name__=='__main__':
+                   n = 20
+                   print ("The prime numbers smaller than or equal to", n,"is")
+                   SieveOfEratosthenes(n)
+                ]]>
+                </code>
+            </program>
+        </listing>
+
+        <listing xml:id="sieve-cpp">
+            <title>
+                <url href="https://www.tutorialspoint.com/cplusplus-program-to-implement-sieve-of-eratosthenes-to-generate-prime-numbers-between-given-range" visual="www.tutorialspoint.com/cplusplus-program-to-implement-sieve-of-eratosthenes-to-generate-prime-numbers-between-given-range">Sieve of Eratosthenes</url>,
+                C++
+            </title>
+
+            <program label="sieve-codelens-cpp" interactive="codelens" language="cpp">
+                <code> <![CDATA[
+                #include <stdio.h>
+                const int len = 20;
+                int main() {
+                   int arr[20] = {0};
+                   for (int i = 2; i < len; i++) {
+                      for (int j = i * i; j < len; j+=i) {
+                         arr[j - 1] = 1;
+                      }
+                   }
+                   for (int i = 1; i < len; i++) {
+                      if (arr[i - 1] == 0)
+                        printf(" %d", i);
+                   }
+                }
+                ]]>
+                </code>
+            </program>
+        </listing>
+
+        <listing xml:id="sieve-java">
+            <title>
+                <url href="https://www.tutorialspoint.com/Sieve-of-Eratosthenes-in-java" visual="www.tutorialspoint.com/Sieve-of-Eratosthenes-in-java">Sieve of Eratosthenes</url>,
+                Java
+            </title>
+
+            <program label="sieve-codelens-java" interactive="codelens" language="java">
+                <code><![CDATA[
+                public class SievePrimeFactors  {
+                   public static void main(String args[]) {
+                      int num = 20;
+                      boolean[] bool = new boolean[num];
+
+                      for (int i = 0; i< bool.length; i++) {
+                         bool[i] = true;
+                      }
+                      for (int i = 2; i < Math.sqrt(num); i++) {
+                         if(bool[i] == true) {
+                            for(int j = (i*i); j < num; j = j+i) {
+                               bool[j] = false;
+                            }
+                         }
+                      }
+                      System.out.println("List of prime numbers: ");
+                      for (int i = 2; i< bool.length; i++) {
+                         if(bool[i]==true) {
+                            System.out.println(i);
+                         }
+                      }
+                   }
+                }
+                ]]>
+                </code>
+            </program>
+        </listing>
+    </chapter>

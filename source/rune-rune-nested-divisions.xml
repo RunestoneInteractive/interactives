@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
+    <chapter xml:id="rune-nested-divisions">
+        <title>Deeper</title>
+
+        <introduction>
+            <p>
+                This is a stub of a <tag>section</tag>, but it contains two
+                <tag>subsection</tag> which each contain a PROJECT-LIKE item
+                that includes a <tag>program</tag> element, and thus is a coding
+                exercise.
+                This tests migration to the Runestone assignment area, though
+                Runestone only has divisions two-deep ( <q>chapter</q> and
+                <q>subchapter</q>, so both will show up associated with the same
+                <tag>section</tag> <mdash/> this one.
+            </p>
+
+            <p>
+                The first is a start of a C program, so will only be interactive
+                on a Runestone server.
+                The second is a Python program, so will be interactive in all
+                HTML outputs.
+            </p>
+        </introduction>
+
+        <subsection>
+            <title>Subsection One</title>
+
+            <p>
+                An <tag>activity</tag> next.
+                This one has a <tag>program</tag> so will be made interactive
+                whenever possible.
+            </p>
+
+            <activity label="activity-in-subsection">
+                <title>Activity in a Subsection</title>
+
+                <statement>
+                    <p>
+                        We would suggest you do something here.
+                    </p>
+                </statement>
+
+                <program xml:id="coding-exercise-partial-three" interactive="activecode" language="c">
+                    <code>
+                    #include &lt;stdio.h&gt;
+
+                    int main(void)
+                    </code>
+                </program>
+            </activity>
+
+            <p>
+                Nothing suggests this next <tag>project</tag> is interactive.
+            </p>
+
+            <project>
+                <title>Project in a Subsection</title>
+
+                <statement>
+                    <p>
+                        You would work this project on paper, most likely.
+                        It is <em>never</em> interactive since there is no
+                        indication of a desire for that, even if hosted on a
+                        capable platform.
+                    </p>
+
+                    <p>
+                        A little bit of markup, to test a bug: <m>x^2</m>.
+                        (The bug was only apparent under a deprecated method for
+                        specify a question to be an interactive short-answer
+                        question on Runestone Academy.)
+                    </p>
+                </statement>
+            </project>
+        </subsection>
+
+        <subsection>
+            <title>Subsection Two</title>
+
+            <p>
+                An <tag>exploration</tag> next.
+            </p>
+
+            <exploration label="exploration-with-always-static-program">
+                <title>Exploration in a Subsection</title>
+
+                <statement>
+                    <p>
+                        We would suggest now that you explore something here.
+                        In this case we simply provide a CodeLens, which would
+                        be graded as an <q>interaction</q>.
+                    </p>
+                </statement>
+
+                <program interactive="codelens" language="python">
+                    <code>
+                    for i in range(10):
+                        print(i)
+                    </code>
+                </program>
+            </exploration>
+
+            <p>
+                The next simple <tag>exercise</tag> will be a
+                <q>short answer</q> question on a capable interactive platform
+                since we have included a <tag>response</tag> element.
+            </p>
+
+            <exercise label="interactive-short-answer">
+                <title>Inline Exercise in a Subsection</title>
+
+                <statement>
+                    <p>
+                        I am an interactive short answer question, but only on a
+                        capable platform.
+                    </p>
+                </statement>
+                <response/>
+            </exercise>
+        </subsection>
+    </chapter>

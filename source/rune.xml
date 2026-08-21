@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!--********************************************************************
+Copyright 2016 Robert A. Beezer
+
+This file is part of MathBook XML.
+
+MathBook XML is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 2 or version 3 of the
+License (at your option).
+
+MathBook XML is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
+*********************************************************************-->
+<!-- This file was originally part of the book     -->
+<!-- (as copied on 2016/03/25)                     -->
+<!--                                               -->
+<!--   Abstract Algebra: Theory and Applications   -->
+<!--                                               -->
+<!-- Copyright (C) 1997-2014  Thomas W. Judson     -->
+<chapter xml:id="rune" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Runestone Interactives</title>
+
+    <introduction>
+        <p>
+            We collect Runestone interactive items for testing here, in sections
+            of their own.
+        </p>
+
+        <p>
+            Some of these samples only function if hosted on a Runestone server.
+            To see those in action, visit the copy of the
+            <url href="https://runestone.academy/ns/books/published/PTXSB/sample-book.html">Sample Book hosted on Runestone</url>
+        </p>
+    </introduction>
+
+    <xi:include href="./rune-true-false-exercises.xml" />
+    <xi:include href="./rune-multiple-choice-exercises.xml" />
+    <xi:include href="./rune-parsons-exercises.xml" />
+    <xi:include href="./rune-horizontal-parsons-exercises.xml" />
+    <xi:include href="./rune-matching-exercises.xml" />
+    <xi:include href="./rune-clickable-area-exercises.xml" />
+    <xi:include href="./rune-select-exercises.xml" />
+    <xi:include href="./rune-short-answer-exercises.xml" />
+    <xi:include href="./rune-fill-in-exercises-old.xml" />
+    <xi:include href="./rune-fill-in-exercises.xml" />
+    <xi:include href="./rune-fill-in-literal-exercises.xml" />
+    <xi:include href="./rune-runestone-hodgepodge.xml" />
+    <xi:include href="./rune-reading-questions.xml" />
+    <xi:include href="./rune-worksheet-groupwork.xml" />
+    <xi:include href="./rune-groupwork-title.xml" />
+    <xi:include href="./rune-chapter-exam.xml" />
+</chapter>

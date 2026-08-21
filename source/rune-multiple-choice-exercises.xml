@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
+    <exercises xml:id="multiple-choice-exercises" groupwork="yes" groupsize="5" label="exercises-groupwork">
+        <title>Multiple Choice Exercises</title>
+
+        <introduction>
+            <p>
+                When this <tag>exercises</tag> division is hosted on Runestone
+                Academy, it will be enabled for group work.
+                See group selection and submission features are at the end of
+                the division.
+                See <xref ref="worksheet-groupwork"/> for more detail.
+                (2024-07-24: experimental.)
+            </p>
+        </introduction>
+
+        <exercise xml:id="multiple-choice-one" label="multiple-choice-not-randomized">
+            <title>Multiple-Choice, Not Randomized, One Answer</title>
+
+            <idx>stop signs</idx>
+            <statement>
+                <p>
+                    What color is a stop sign?
+                </p>
+            </statement>
+            <!-- to appear as problem with potentially multiple correct -->
+            <!-- answers (even though there is only one), use           -->
+            <!--                                                        -->
+            <!--     <choices multiple-correct="yes">                   -->
+            <!--                                                        -->
+            <choices>
+                <choice>
+                    <statement>
+                        <p>
+                            Green
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Green means <q>go!</q>.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Red
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Red is universally used for prohibited activities or
+                            serious warnings.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            White
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            White might be hard to see.
+                        </p>
+                    </feedback>
+                </choice>
+            </choices>
+
+            <hint>
+                <p>
+                    What did you see last time you went driving?
+                </p>
+            </hint>
+
+            <hint>
+                <p>
+                    Maybe go out for a drive?
+                </p>
+            </hint>
+        </exercise>
+
+        <exercise label="multiple-choice-feedback-math">
+            <title>Multiple-Choice, Math in Feedback</title>
+
+            <statement>
+                <p>
+                    What is the coefficient on <m>x^4y^4</m> in
+                    <m>(2x+5xy^2)^4</m>?
+                </p>
+            </statement>
+
+            <choices>
+                <choice>
+                    <statement>
+                        <p>
+                            <m>6</m>
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Have you accounted for the <m>2</m> and <m>5</m>
+                            that are in the original binomial?
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            <m>60</m>
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            What should the exponents on <m>2</m> and <m>5</m>
+                            be when you expand <m>(2x+5xy^2)^4</m>?
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            <m>100</m>
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Have you included something of the form
+                            <m>\binom{n}{k}</m> in your computations?
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            <m>600</m>
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Correct!
+                            Using the binomial theorem, we get a term containing
+                            the monomial <m>x^4y^4</m> by taking two of the
+                            first term, and two of the second term in the
+                            expansion of <m>(2x+5xy^2)^4</m>, and so this term
+                            is equal to
+                            <md>
+                                \binom{4}{2} (2x)^2 (5xy^2)^2 = 6 \cdot 2^2 5^2 x^4 y^4 = 600 x^4 y^4
+                            </md>.
+                        </p>
+                    </feedback>
+                </choice>
+            </choices>
+        </exercise>
+
+        <exercise label="multiple-choice-multiple-answers">
+            <title>Multiple-Choice, Not Randomized, Multiple Answers</title>
+
+            <idx>stop signs</idx>
+            <statement>
+                <p>
+                    Which colors might be found in a rainbow?
+                    (Note that the radio buttons now allow multiple buttons to
+                    be selected.)
+                </p>
+            </statement>
+
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Red
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Red is a definitely one of the colors.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Yellow
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Yes, yellow is correct.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            Black
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Remember the acronym <ellipsis/>
+                            <acro>ROY G BIV</acro>.
+                            <q>B</q> stands for blue.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Green
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Yes, green is one of the colors.
+                        </p>
+                    </feedback>
+                </choice>
+            </choices>
+
+            <hint>
+                <p>
+                    Do you know the acronym <ellipsis/> <acro>ROY G BIV</acro>
+                    for the colors of a rainbow, and their order?
+                </p>
+            </hint>
+        </exercise>
+
+        <exercise label="multiple-choice-randomized">
+            <title>Multiple-Choice, Randomized, One Answer</title>
+
+            <idx>stop signs</idx>
+            <statement>
+                <p>
+                    What color is a stop sign?
+                    [Static versions retain the order as authored.]
+                </p>
+            </statement>
+
+            <choices randomize="yes">
+                <choice>
+                    <statement>
+                        <p>
+                            Green
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Green means <q>go!</q>.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Red
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Red is universally used for prohibited activities or
+                            serious warnings.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            White
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            White might be hard to see.
+                        </p>
+                    </feedback>
+                </choice>
+            </choices>
+
+            <hint>
+                <p>
+                    What did you see last time you went driving?
+                </p>
+            </hint>
+
+            <hint>
+                <p>
+                    Maybe go out for a drive?
+                </p>
+            </hint>
+        </exercise>
+
+        <exercise label="multiple-choice-randomized-forced-checkbox">
+            <title>
+                Multiple-Choice, Randomized, One Answer but with Checkboxes
+            </title>
+            <idx>stop signs</idx>
+            <statement>
+                <p>
+                    What color is a stop sign?
+                    [Static versions retain the order as authored.]
+                </p>
+            </statement>
+
+            <choices randomize="yes" multiple-correct="yes">
+                <choice>
+                    <statement>
+                        <p>
+                            Green
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Green means <q>go!</q>.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Red
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Red is universally used for prohibited activities or
+                            serious warnings.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            Yellow
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Yellow means slow down.
+                        </p>
+                    </feedback>
+                </choice>
+            </choices>
+
+            <hint>
+                <p>
+                    What did you see last time you went driving?
+                </p>
+            </hint>
+
+            <hint>
+                <p>
+                    Maybe go out for a drive?
+                </p>
+            </hint>
+        </exercise>
+
+        <exercise label="multiple-choice-randomized-multiple-answers">
+            <title>Multiple-Choice, Randomized, Multiple Answers</title>
+
+            <idx>stop signs</idx>
+            <statement>
+                <p>
+                    Which colors might be found in a rainbow?
+                    (Note that the radio buttons now allow multiple buttons to
+                    be selected.) [Static versions retain the order as
+                    authored.]
+                </p>
+            </statement>
+
+            <choices randomize="yes">
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Red
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Red is a definitely one of the colors.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Yellow
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Yes, yellow is correct.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            Black
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Remember the acronym <ellipsis/>
+                            <acro>ROY G BIV</acro>.
+                            <q>B</q> stands for blue.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Green
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Yes, green is one of the colors.
+                        </p>
+                    </feedback>
+                </choice>
+            </choices>
+
+            <hint>
+                <p>
+                    Do you know the acronym <ellipsis/> <acro>ROY G BIV</acro>
+                    for the colors of a rainbow, and their order?
+                </p>
+            </hint>
+        </exercise>
+
+        <exercise label="mathematical-multiple-choice-multiple-answers">
+            <title>
+                Mathematical Multiple-Choice, Not Randomized, Multiple Answers
+            </title>
+            <idx>stop signs</idx>
+            <statement>
+                <p>
+                    Which of the following is an antiderivative of
+                    <m>2\sin(x)\cos(x)</m>?
+                </p>
+            </statement>
+
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            <m>\sin^2(x)+832</m>
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Remember that when we write <m>+C</m> on an
+                            antiderivative that this is the way we communicate
+                            that there are <em>many</em> possible derivatives,
+                            but they all <q>differ by a constant</q>.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            <m>\sin^2(x)</m>
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            The derivative given in the statement of the problem
+                            looks exactly like an application of the chain rule
+                            to <m>\sin^2(x)</m>.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            <m>-\cos^2(x)</m>
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Take a derivative on <m>-\cos^2(x)</m> to see that
+                            this answer is correct.
+                            Extra credit: does this answer
+                            <q>differ by a constant</q> when subtracted from
+                            either of the other two correct answers?
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            <m>-2\cos(x)\sin(x)</m>
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            The antiderivative of a product is not the product
+                            of the antiderivatives.
+                            Use the product rule to take a derivative and see
+                            that this answer is not correct.
+                        </p>
+                    </feedback>
+                </choice>
+            </choices>
+
+            <hint>
+                <p>
+                    You can take a derivative on any one of the choices to see
+                    if it is correct or not, rather than using techniques of
+                    integration to find <em>a single</em> correct answer.
+                </p>
+            </hint>
+        </exercise>
+
+        <exercise xml:id="multiple-choice-in-columns" label="multiple-choice-columns">
+            <title>Multiple-Choice, Not Randomized, One Answer</title>
+
+            <idx>stop signs</idx>
+            <statement>
+                <p>
+                    What color is a stop sign?
+                </p>
+
+                <p>
+                    Note: we are experimenting with choices in columns
+                    (2025-05-17).
+                    Three columns here.
+                </p>
+            </statement>
+            <!-- to appear as problem with potentially multiple correct -->
+            <!-- answers (even though there is only one), use           -->
+            <!--                                                        -->
+            <!--     <choices multiple-correct="yes">                   -->
+            <!--                                                        -->
+            <choices cols="3">
+                <choice>
+                    <statement>
+                        <p>
+                            Green
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Green means <q>go!</q>.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Red
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Red is universally used for prohibited activities or
+                            serious warnings.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            White
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            White might be hard to see.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            Purple
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Hmmmmmmm.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            Pink
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            I have never seen a pink road sign!
+                        </p>
+                    </feedback>
+                </choice>
+            </choices>
+
+            <hint>
+                <p>
+                    What did you see last time you went driving?
+                </p>
+            </hint>
+
+            <hint>
+                <p>
+                    Maybe go out for a drive?
+                </p>
+            </hint>
+        </exercise>
+    </exercises>

@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
+    <chapter xml:id="coding-exercises">
+        <title>Coding Exercises</title>
+
+        <p>
+            Program listings can be more that just live demonstrations, they can
+            be exercises.
+            The first two also occur in the sample article where they just get a
+            static rendering, if at all.
+        </p>
+
+        <exercise label="coding-exercise-blank">
+            <title>Inline Coding Exercise, No Help</title>
+
+            <statement>
+                <p>
+                    An exercise might ask a reader to write a computer program,
+                    that would go here in the <tag>statement</tag>.
+                    But you can also add a <tag>program</tag> element after a
+                    <tag>statement</tag>.
+                    Here we place no code at all, but we do say we want it to be
+                    interactive.
+                    The purpose is to make it a live coding environment for a
+                    version of your output that allows the reader to perhaps
+                    submit a solution.
+                    The <tag>program</tag> element is necessary so you can
+                    specify a programming language.
+                </p>
+
+                <p>
+                    In interactive formats, try creating and running a Python
+                    program below.
+                    Use CodeLens to step through the program.
+                </p>
+            </statement>
+
+            <program interactive="activecode" language="python"/>
+            <hint>
+                <p>
+                    We didn't really ask you to do anything.
+                </p>
+            </hint>
+        </exercise>
+
+        <exercise label="coding-exercise-partial-one">
+            <title>Inline Coding Exercise, Partial</title>
+
+            <statement>
+                <p>
+                    Similar to above, but we provide a starting point for the
+                    exercise.
+                </p>
+            </statement>
+
+            <program interactive="activecode" language="c">
+                <code>
+                #include &lt;stdio.h&gt;
+
+                int main(void)
+                </code>
+            </program>
+
+            <answer>
+                <p>
+                    We're not really sure.
+                    But it would begin as follows:
+                </p>
+
+                <program language="c">
+                    <code>
+                    #include &lt;stdio.h&gt;
+
+                    int main(void)
+                    </code>
+                </program>
+            </answer>
+        </exercise>
+
+        <activity xml:id="coding-exercise-partial-two" label="coding-exercise-partial-two">
+            <title>Activity Coding Exercise</title>
+
+            <statement>
+                <p>
+                    Similar to above, but now as a complete Python program
+                    inside an <tag>activity</tag>.
+                    This demonstrates the possibility to use any
+                    <q>project-like</q> block ( <tag>project</tag>,
+                    <tag>activity</tag>, <tag>exploration</tag>,
+                    <tag>investigation</tag> ), but not in the case when
+                    structured with <tag>task</tag>.
+                    (There is an empty <tag>tests</tag> element here, designed
+                    to test relief for an error this will cause on a Runestone
+                    server.)
+                </p>
+            </statement>
+
+            <program label="activity-program" interactive="activecode" language="python">
+                <code>
+                for i in range(10):
+                    print(i)
+                </code>
+                <tests/>
+            </program>
+
+            <answer>
+                <p>
+                    We're still not really sure.
+                </p>
+            </answer>
+        </activity>
+
+        <exercise>
+            <title>An Exercise with a Static Program</title>
+
+            <statement>
+                <p>
+                    Similar to above, again, but we place the <tag>program</tag>
+                    element <em>inside</em> the <tag>statement</tag>, not after
+                    it as a peer.
+                    This signals that this is not a coding exercise and the
+                    program will render static, since it is explicitly labeled
+                    as not being interactive.
+                </p>
+
+                <program xml:id="coding-exercise-static" language="c" interactive="no">
+                    <code>
+                    #include &lt;stdio.h&gt;
+
+                    int main(void)
+                    </code>
+                </program>
+            </statement>
+
+            <solution>
+                <p>
+                    We're not really sure.
+                    Still.
+                </p>
+            </solution>
+        </exercise>
+
+        <p>
+            Unit testing can be used to automatically evaluate student work.
+            Unit testing frameworks are available for Python, Java, and C++
+        </p>
+        <!-- This example also appears in the PreTeXt Guide (doc/guide/author/topics.xml).  Apply any edit to both copies. -->
+        <exercise xml:id="unit-test-example" label="coding-exercise-python-unit-test">
+            <title>Coding Exercise, with Unit Tests</title>
+
+            <statement>
+                <p>
+                    Fix the following code so that it always correctly adds two
+                    numbers.
+                    [Ed.
+                    Unit test support is experimental.]
+                </p>
+            </statement>
+
+            <program interactive="activecode" language="python">
+                <code>
+                def add(a,b):
+                    return 4
+                </code>
+                <tests>
+                    from unittest.gui import TestCaseGui
+
+                class myTests(TestCaseGui):
+
+                   def testOne(self):
+                       self.assertEqual(add(2,2), 4, "Adding two identical integers")
+                       self.assertEqual(add(7,13), 20, "Adding two different integers")
+                       self.assertAlmostEqual(add(2.0,3.0), 5.0, 5, "Adding two decimal numbers")
+
+                myTests().main()
+                </tests>
+            </program>
+
+            <answer>
+                <p>
+                    We're not really sure.
+                    But it would begin as follows:
+                </p>
+
+                <program language="c">
+                    <code>
+                    #include &lt;stdio.h&gt;
+
+                    int main(void)
+                    </code>
+                </program>
+            </answer>
+        </exercise>
+
+        <p>
+            An activecode exercise can offer extra help to a reader who gets
+            stuck.
+            Setting <attr>codetailor</attr> to <c>yes</c> adds a <q>Get Help</q>
+            button that, on a Runestone server, presents a personalized Parsons
+            problem <mdash/> the lines of a correct solution, scrambled for the
+            reader to reassemble.
+            It works best for an exercise whose solution decomposes into a
+            handful of clear lines, as here.
+        </p>
+
+        <exercise xml:id="codetailor-example" label="coding-exercise-codetailor">
+            <title>Coding Exercise, with CodeTailor Help</title>
+
+            <statement>
+                <p>
+                    Write a function <c>total</c> that returns the sum of a list
+                    of numbers.
+                    If you get stuck, use the <q>Get Help</q> button to assemble
+                    a solution from scrambled lines.
+                </p>
+            </statement>
+
+            <program interactive="activecode" language="python" codetailor="yes">
+                <code>
+                def total(numbers):
+                    return 0
+                </code>
+                <tests>
+                    from unittest.gui import TestCaseGui
+
+                class myTests(TestCaseGui):
+
+                    def testOne(self):
+                        self.assertEqual(total([1, 2, 3]), 6, "Summing three integers")
+                        self.assertEqual(total([]), 0, "Summing an empty list")
+                        self.assertEqual(total([10, -4]), 6, "Summing with a negative")
+
+                myTests().main()
+                </tests>
+            </program>
+
+            <solution>
+                <p>
+                    Accumulate the numbers in a running total.
+                </p>
+
+                <program language="python">
+                    <code>
+                    def total(numbers):
+                        result = 0
+                        for n in numbers:
+                            result = result + n
+                        return result
+                    </code>
+                </program>
+            </solution>
+        </exercise>
+
+        <exercise xml:id="unit-test-example-java" label="coding-exercise-java-unit-test">
+            <title>Java Exercise, with Unit Tests</title>
+
+            <statement>
+                <p>
+                    Unit tests for Java can be written using junit.
+                </p>
+            </statement>
+
+            <program interactive="activecode" language="java">
+                <code>
+                    public class Test1
+                    {
+                        public static void main(String[] args)
+                        {
+                            boolean isRaining = true;
+                            if (isRaining)
+                            {
+                                System.out.println("Take an umbrella!");
+                            }
+                            System.out.println("Drive carefully");
+                        }
+                    }
+                </code>
+                <tests>
+                    import static org.junit.Assert.*;
+                    import org.junit.*;
+                    import java.io.*;
+
+                    public class RunestoneTests extends CodeTestHelper
+                    {
+                        @Test
+                        public void testMain() throws IOException
+                        {
+                            String output = getMethodOutput("main");
+                            String expect = "Take an umbrella! \nDrive carefully";
+                            boolean passed = getResults(expect, output, "Expected output from main");
+                            assertTrue(passed);
+                        }
+                    }
+                </tests>
+            </program>
+        </exercise>
+
+        <exercise xml:id="unit-test-example-cpp" label="coding-exercise-cpp-unit-test">
+            <title>C++ Exercise, with Unit Tests</title>
+
+            <statement>
+                <p>
+                    Unit tests for C++ can be written using doctest or catch.
+                    Doctest based tests build substantially faster than catch
+                    based ones.
+                </p>
+
+                <p>
+                    In an interactive environment, the tests in this exercise
+                    will be made visible, but uneditable, so that in the event
+                    of a failed test the student can see exactly what is being
+                    tested (Doctest does not report on individual passed tests
+                    and the feedback on failed tests generally won't make sense
+                    without the test itself).
+                </p>
+            </statement>
+
+            <program interactive="activecode" language="cpp">
+                <code>
+                // Complete the function to return the sum of two numbers
+                int add(int a, int b) {
+
+                }
+                </code>
+                <tests visible="yes">
+                    <![CDATA[
+
+//There should be two visible empty lines above this line
+#define DOCTEST_CONFIG_IMPLEMENT_WITH_MAIN
+#include "doctest.h"
+
+TEST_CASE( "Test the add function" ) {
+    REQUIRE( add(2, 3) == 5 );
+    REQUIRE( add(6, 1) == 7 );
+    REQUIRE( add(-5, 5) == 0 );
+}
+]]>
+                </tests>
+            </program>
+        </exercise>
+
+        <p>
+            For simple programs, or languages without an available unit testing
+            framework, input-output testing can be done instead.
+            IO testing can only be done on languages that are run on a Runestone
+            server (Java/C/C++/Octave/Python3).
+        </p>
+
+        <exercise xml:id="io-test-example-cpp" label="coding-exercise-cpp-io-tests">
+            <title>C++ Exercise, with IO Tests</title>
+
+            <statement>
+                <p>
+                    Read in an integer <c>n</c>.
+                    Print out a n by n square of asterisks.
+                </p>
+            </statement>
+
+            <program interactive="activecode" language="cpp">
+                <code><![CDATA[
+                #include <iostream>
+                using namespace std;
+                int main() {
+                    int n;
+                    cin >> n;
+                    for (int i = 0; i < n; i++) {
+                        for (int j = 0; j < n; j++) {
+                            cout << "*";
+                        }
+                        cout << endl;
+                    }
+                } ]]>
+                </code>
+                <tests>
+                    <iotest>
+                        <input>1</input>
+                        <output>
+                            *
+                        </output>
+                    </iotest>
+                    <iotest>
+                        <input>3</input>
+                        <output>
+                            ***
+                            ***
+                            ***
+                        </output>
+                    </iotest>
+                    <iotest>
+                        <input>5</input>
+                        <output>
+                            *****
+                            *****
+                            *****
+                            *****
+                            *****
+                        </output>
+                    </iotest>
+                </tests>
+            </program>
+        </exercise>
+    </chapter>

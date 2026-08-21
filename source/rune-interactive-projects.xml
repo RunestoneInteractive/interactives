@@ -1,0 +1,849 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
+    <chapter xml:id="interactive-projects">
+        <title>Projects and Friends</title>
+
+        <p>
+            <q>PROJECT-LIKE</q> refers to the elements/blocks
+            <tag>project</tag>, <tag>activity</tag>, <tag>activity</tag>, and
+            <tag>exploration</tag>.
+            They are very similar to <tag>exercise</tag>, and here we stress
+            that they can be interactive in all the same ways an
+            <tag>exercise</tag> can.
+            Key differences are that they are blocks, and so are peers of other
+            blocks like paragraphs and examples, and are children of divisions.
+            By default they have their own numbering scheme, though we expect
+            this to convert to an elective behavior.
+        </p>
+
+        <p>
+            Both <tag>exercise</tag> and PROJECT-LIKE can be structured with
+            <tag>task</tag>.
+            It would be natural to have a <tag>project</tag> with multiple
+            <tag>task</tag>, each a possibly different interactive problem type.
+            We expect that to be possible soon.
+            For now, <tag>exercise</tag> and <tag>project</tag> (and friends)
+            need to be structured with a <tag>statement</tag> (and their
+            associated signal) in order to be interactive.
+        </p>
+
+        <activity label="activity-multiple-choice-multiple-answers">
+            <title>Multiple-Choice, Not Randomized, Multiple Answers</title>
+
+            <idx>stop signs</idx>
+            <statement>
+                <p>
+                    Which colors might be found in a rainbow?
+                    (Note that the radio buttons now allow multiple buttons to
+                    be selected.)
+                </p>
+            </statement>
+
+            <choices>
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Red
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Red is a definitely one of the colors.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Yellow
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Yes, yellow is correct.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice>
+                    <statement>
+                        <p>
+                            Black
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Remember the acronym <ellipsis/>
+                            <acro>ROY G BIV</acro>.
+                            <q>B</q> stands for blue.
+                        </p>
+                    </feedback>
+                </choice>
+
+                <choice correct="yes">
+                    <statement>
+                        <p>
+                            Green
+                        </p>
+                    </statement>
+
+                    <feedback>
+                        <p>
+                            Yes, green is one of the colors.
+                        </p>
+                    </feedback>
+                </choice>
+            </choices>
+
+            <hint>
+                <p>
+                    Do you know the acronym <ellipsis/> <acro>ROY G BIV</acro>
+                    for the colors of a rainbow, and their order?
+                </p>
+            </hint>
+        </activity>
+
+        <p>
+            Now an <tag>exercise</tag> with three <tag>task</tag>.
+            Since the middle one is a short-answer question, it will only be
+            interactive on a capable platform.
+        </p>
+
+        <exercise label="true-false-exercise-with-tasks">
+            <title>True/False and Explain</title>
+
+            <introduction>
+                <p>
+                    Structured with <tag>task</tag>, we can have an
+                    <tag>introduction</tag>.
+                    If you are viewing this <tag>exercise</tag> in the Runestone
+                    assignment builder, you will notice that each of these three
+                    <tag>task</tag> appears as its own problem and therefore
+                    each one gets its own copy of this <tag>introduction</tag>
+                    you are reading right now.
+                </p>
+            </introduction>
+
+            <task label="true-false-task">
+                <title>True/False</title>
+
+                <idx>vector space</idx>
+                <statement correct="no">
+                    <p>
+                        Every vector space has finite dimension.
+                    </p>
+                </statement>
+
+                <feedback>
+                    <p>
+                        The vector space of all polynomials with finite degree
+                        has a basis, <m>B = \{1,x,x^2,x^3,\dots\}</m>, which is
+                        infinte.
+                    </p>
+                </feedback>
+
+                <hint>
+                    <p>
+                        <m>P_n</m>, the vector space of polynomials with degree
+                        at most <m>n</m>, has dimension <m>n+1</m> by
+                        <xref ref="theorem-exponent-laws"/>.
+                        [Cross-reference is just a demo, content is not
+                        relevant.] What happens if we relax the defintion and
+                        remove the parameter <m>n</m>?
+                    </p>
+                </hint>
+            </task>
+
+            <task label="short-answer-task">
+                <statement>
+                    <p>
+                        Explain your reasoning in the previous question.
+                    </p>
+                </statement>
+                <response/>
+            </task>
+
+            <task label="matching-task">
+                <title>Matching Problem, Dates</title>
+
+                <idx>matching US dates</idx>
+                <statement>
+                    <p>
+                        Match each event in United States history with the year
+                        it happened.
+                        (We are recycling this to test the static representation
+                        of a matching problem authored inside of
+                        <tag>task</tag>.)
+                    </p>
+                </statement>
+
+                <feedback>
+                    <p>
+                        Review
+                        <url href="https://www.britannica.com/list/25-decade-defining-events-in-us-history" visual="www.britannica.com/list/25-decade-defining-events-in-us-history">Encyclopedia Brittania, 25 Decade-Defining Events in U.S. History</url>
+                        url.
+                    </p>
+                </feedback>
+                <cardsort>
+                    <match>
+                        <premise order="4">Monroe Doctrine</premise>
+                        <response>1823</response>
+                    </match>
+                    <match>
+                        <premise order="3">Haymarket Riot</premise>
+                        <response>1886</response>
+                    </match>
+                    <match>
+                        <premise order="1">Louisiana Purchase</premise>
+                        <response>1803</response>
+                    </match>
+                    <match>
+                        <premise order="2">Battle of Gettysburg</premise>
+                        <response>1863</response>
+                    </match>
+                </cardsort>
+            </task>
+
+            <conclusion>
+                <p>
+                    A <tag>conclusion</tag> is possible and will be replicated
+                    after each of the three <tag>task</tag> when they are viewed
+                    individually in the Runestone assignment builder.
+                </p>
+            </conclusion>
+        </exercise>
+
+        <p>
+            Now an <tag>exploration</tag> nested two-deep with
+            <em>the same two questions</em>, two times each, just for testing
+            purposes.
+        </p>
+
+        <exploration label="exploration-two-deep">
+            <title>Exploring Two-Deep</title>
+
+            <introduction>
+                <p>
+                    This is a top-level introduction.
+                </p>
+            </introduction>
+
+            <task>
+                <title>First Iterations of Each</title>
+
+                <introduction>
+                    <p>
+                        This is an introduction to the first iterations, at the
+                        second level.
+                    </p>
+                </introduction>
+
+                <task label="task-multiple-choice-first">
+                    <title>
+                        Multiple-Choice, Not Randomized, One Answer (First Copy)
+                    </title>
+                    <idx>stop signs</idx>
+                    <statement>
+                        <p>
+                            What color is a stop sign?
+                        </p>
+                    </statement>
+
+                    <choices>
+                        <choice>
+                            <statement>
+                                <p>
+                                    Green
+                                </p>
+                            </statement>
+
+                            <feedback>
+                                <p>
+                                    Green means <q>go!</q>.
+                                </p>
+                            </feedback>
+                        </choice>
+
+                        <choice correct="yes">
+                            <statement>
+                                <p>
+                                    Red
+                                </p>
+                            </statement>
+
+                            <feedback>
+                                <p>
+                                    Red is universally used for prohibited
+                                    activities or serious warnings.
+                                </p>
+                            </feedback>
+                        </choice>
+
+                        <choice>
+                            <statement>
+                                <p>
+                                    White
+                                </p>
+                            </statement>
+
+                            <feedback>
+                                <p>
+                                    White might be hard to see.
+                                </p>
+                            </feedback>
+                        </choice>
+                    </choices>
+
+                    <hint>
+                        <p>
+                            What did you see last time you went driving?
+                        </p>
+                    </hint>
+
+                    <hint>
+                        <p>
+                            Maybe go out for a drive?
+                        </p>
+                    </hint>
+                </task>
+
+                <task label="task-active-code-first">
+                    <title>Python ActiveCode (First Copy)</title>
+
+                    <statement>
+                        <p>
+                            Run the following program and observe the
+                            information provided at each step.
+                        </p>
+                    </statement>
+
+                    <program label="python-active-code-first" interactive="activecode" language="python">
+                        <code>
+                        for i in range(10):
+                            print(i)
+                        </code>
+                    </program>
+
+                    <answer>
+                        <p>
+                            We're still not really sure.
+                        </p>
+                    </answer>
+                </task>
+
+                <conclusion>
+                    <p>
+                        We include a conclusion to the first iterations, at the
+                        second level (with no conclusion at the top-level).
+                    </p>
+                </conclusion>
+            </task>
+
+            <task>
+                <title>Second Iterations of Each</title>
+
+                <introduction>
+                    <p>
+                        This is an introduction to the second iterations, at the
+                        second level.
+                    </p>
+                </introduction>
+
+                <task label="task-multiple-choice-second">
+                    <title>
+                        Multiple-Choice, Not Randomized, One Answer (Second
+                        Copy)
+                    </title>
+                    <idx>stop signs</idx>
+                    <statement>
+                        <p>
+                            What color is a stop sign?
+                        </p>
+
+                        <p>
+                            We include a spurious Python <tag>program</tag>
+                            element in the <tag>statement</tag> which should
+                            never convert this from a multiple-choice question
+                            into a programming exercise (on any host), but
+                            should still get syntax highlighting as part of
+                            rendering the exercise.
+                        </p>
+
+                        <program xml:id="python-in-statement" language="python">
+                            <code>
+                            sum = 0
+                            sum += 6
+                            for i in range(sum):
+                                print("Hello, World!")
+                            </code>
+                        </program>
+                    </statement>
+
+                    <choices>
+                        <choice>
+                            <statement>
+                                <p>
+                                    Green
+                                </p>
+                            </statement>
+
+                            <feedback>
+                                <p>
+                                    Green means <q>go!</q>.
+                                </p>
+                            </feedback>
+                        </choice>
+
+                        <choice correct="yes">
+                            <statement>
+                                <p>
+                                    Red
+                                </p>
+                            </statement>
+
+                            <feedback>
+                                <p>
+                                    Red is universally used for prohibited
+                                    activities or serious warnings.
+                                </p>
+                            </feedback>
+                        </choice>
+
+                        <choice>
+                            <statement>
+                                <p>
+                                    White
+                                </p>
+                            </statement>
+
+                            <feedback>
+                                <p>
+                                    White might be hard to see.
+                                </p>
+                            </feedback>
+                        </choice>
+                    </choices>
+
+                    <hint>
+                        <p>
+                            What did you see last time you went driving?
+                        </p>
+                    </hint>
+
+                    <hint>
+                        <p>
+                            Maybe go out for a drive?
+                        </p>
+                    </hint>
+                </task>
+
+                <task label="task-active-code-second">
+                    <title>Python ActiveCode (Second Copy)</title>
+
+                    <statement>
+                        <p>
+                            Run the following program and observe the
+                            information provided at each step.
+                        </p>
+                    </statement>
+
+                    <program label="python-active-code-second" interactive="activecode" language="python">
+                        <code>
+                        for i in range(10):
+                            print(i)
+                        </code>
+                    </program>
+
+                    <answer>
+                        <p>
+                            We're still not really sure.
+                        </p>
+                    </answer>
+                </task>
+
+                <conclusion>
+                    <p>
+                        We include a conclusion to the first iterations, at the
+                        second level (with no conclusion at the top-level).
+                    </p>
+                </conclusion>
+            </task>
+            <!-- An overall conclusion would go here, which we omit for testing purposes -->
+        </exploration>
+
+        <p>
+            This is an <tag>exercise</tag> which has been structured deeply with
+            <tag>task</tag>.
+            It is here to allow for testing a tabbed viewer presentation in
+            online outputs.
+        </p>
+
+        <exercise xml:id="exercise-structured" label="very-structured-exercise">
+            <title>A very structured exercise</title>
+
+            <introduction>
+                <p>
+                    This is an over-arching introduction to the whole exercise.
+                    We follow with some tasks.
+                    In interdum suscipit ullamcorper.
+                    Morbi sit amet malesuada augue, id vestibulum magna.
+                    Nulla blandit dui metus, malesuada mollis sapien ullamcorper
+                    sit amet.
+                    Nulla at neque nisi.
+                    Integer vel porta felis.
+                </p>
+            </introduction>
+
+            <task>
+                <title>A super-simple task</title>
+
+                <p>
+                    This first task is very simple, just a paragraph.
+                    In interdum suscipit ullamcorper.
+                    Morbi sit amet malesuada augue, id vestibulum magna.
+                    Nulla blandit dui metus, malesuada mollis sapien ullamcorper
+                    sit amet.
+                    Nulla at neque nisi.
+                    Integer vel porta felis.
+                </p>
+            </task>
+
+            <task>
+                <p>
+                    Now three paragraphs.
+                    In interdum suscipit ullamcorper.
+                    Morbi sit amet malesuada augue, id vestibulum magna.
+                    Nulla blandit dui metus, malesuada mollis sapien ullamcorper
+                    sit amet.
+                    Nulla at neque nisi.
+                    Integer vel porta felis.
+                </p>
+
+                <p>
+                    In interdum suscipit ullamcorper.
+                    Morbi sit amet malesuada augue, id vestibulum magna.
+                    Nulla blandit dui metus, malesuada mollis sapien ullamcorper
+                    sit amet.
+                    Nulla at neque nisi.
+                    Integer vel porta felis.
+                </p>
+
+                <p>
+                    In interdum suscipit ullamcorper.
+                    Morbi sit amet malesuada augue, id vestibulum magna.
+                    Nulla blandit dui metus, malesuada mollis sapien ullamcorper
+                    sit amet.
+                    Nulla at neque nisi.
+                    Integer vel porta felis.
+                </p>
+            </task>
+
+            <task>
+                <title>
+                    A title of a task that has a subtask with an
+                    <tag>answer</tag> for the Solutions
+                </title>
+
+                <introduction>
+                    <p>
+                        This second task is further divided by more tasks.
+                        This is its introduction.
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+
+                    <p>
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+                </introduction>
+
+                <task>
+                    <title>
+                        A task with a title and an <tag>answer</tag> for the
+                        Solutions
+                    </title>
+
+                    <statement>
+                        <p>
+                            A really simple subtask.
+                            In interdum suscipit ullamcorper.
+                            Morbi sit amet malesuada augue, id vestibulum magna.
+                            Nulla blandit dui metus, malesuada mollis sapien
+                            ullamcorper sit amet.
+                            Nulla at neque nisi.
+                            Integer vel porta felis.
+                        </p>
+
+                        <p>
+                            A short paragraph, before an answer.
+                        </p>
+                    </statement>
+
+                    <answer>
+                        <p>
+                            With a proof.
+                        </p>
+
+                        <proof>
+                            <p>
+                                In interdum suscipit ullamcorper.
+                                Morbi sit amet malesuada augue, id vestibulum
+                                magna.
+                                Nulla blandit dui metus, malesuada mollis sapien
+                                ullamcorper sit amet.
+                                Nulla at neque nisi.
+                                Integer vel porta felis.
+                            </p>
+                        </proof>
+
+                        <p>
+                            And a bit more to say.
+                        </p>
+                    </answer>
+                </task>
+
+                <task>
+                    <statement>
+                        <p>
+                            A subtask with an answer.
+                            In interdum suscipit ullamcorper.
+                            Morbi sit amet malesuada augue, id vestibulum magna.
+                            Nulla blandit dui metus, malesuada mollis sapien
+                            ullamcorper sit amet.
+                            Nulla at neque nisi.
+                            Integer vel porta felis.
+                        </p>
+                    </statement>
+
+                    <answer>
+                        <p>
+                            Right!
+                            In interdum suscipit ullamcorper.
+                            Morbi sit amet malesuada augue, id vestibulum magna.
+                            Nulla blandit dui metus, malesuada mollis sapien
+                            ullamcorper sit amet.
+                            Nulla at neque nisi.
+                            Integer vel porta felis.
+                        </p>
+                    </answer>
+                </task>
+
+                <task>
+                    <introduction>
+                        <p>
+                            Three simple sub-sub-tasks.
+                            In interdum suscipit ullamcorper.
+                            Morbi sit amet malesuada augue, id vestibulum magna.
+                            Nulla blandit dui metus, malesuada mollis sapien
+                            ullamcorper sit amet.
+                            Nulla at neque nisi.
+                            Integer vel porta felis.
+                        </p>
+                    </introduction>
+
+                    <task>
+                        <p>
+                            First subsubtask.
+                            Short paragraph.
+                        </p>
+                    </task>
+
+                    <task>
+                        <title>A second three-deep subsubtask!</title>
+
+                        <p>
+                            Second subsubtask.
+                            In interdum suscipit ullamcorper.
+                            Morbi sit amet malesuada augue, id vestibulum magna.
+                            Nulla blandit dui metus, malesuada mollis sapien
+                            ullamcorper sit amet.
+                            Nulla at neque nisi.
+                            Integer vel porta felis.
+                        </p>
+
+                        <p>
+                            In interdum suscipit ullamcorper.
+                            Morbi sit amet malesuada augue, id vestibulum magna.
+                            Nulla blandit dui metus, malesuada mollis sapien
+                            ullamcorper sit amet.
+                            Nulla at neque nisi.
+                            Integer vel porta felis.
+                        </p>
+                    </task>
+
+                    <task>
+                        <p>
+                            Third subsubtask.
+                            In interdum suscipit ullamcorper.
+                            Morbi sit amet malesuada augue, id vestibulum magna.
+                            Nulla blandit dui metus, malesuada mollis sapien
+                            ullamcorper sit amet.
+                            Nulla at neque nisi.
+                            Integer vel porta felis.
+                        </p>
+
+                        <p>
+                            In interdum suscipit ullamcorper
+                        </p>
+
+                        <p>
+                            In interdum suscipit ullamcorper.
+                            Morbi sit amet malesuada augue, id vestibulum magna.
+                            Nulla blandit dui metus, malesuada mollis sapien
+                            ullamcorper sit amet.
+                            Nulla at neque nisi.
+                            Integer vel porta felis.
+                        </p>
+                    </task>
+
+                    <conclusion>
+                        <p>
+                            The conclusion of the structured subtask.
+                            In interdum suscipit ullamcorper.
+                            Morbi sit amet malesuada augue, id vestibulum magna.
+                            Nulla blandit dui metus, malesuada mollis sapien
+                            ullamcorper sit amet.
+                            Nulla at neque nisi.
+                            Integer vel porta felis.
+                        </p>
+                    </conclusion>
+                </task>
+
+                <task>
+                    <p>
+                        A simple task as the last subtask.
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+                </task>
+
+                <conclusion>
+                    <p>
+                        This concludes our structured second task.
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+                </conclusion>
+            </task>
+
+            <task>
+                <statement>
+                    <p>
+                        This third top-level task is intermediate in complexity,
+                        you are reading the <c>statement</c>, which is followed
+                        by more items.
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+                </statement>
+
+                <hint>
+                    <p>
+                        One hint.
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+
+                    <p>
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+                </hint>
+
+                <answer>
+                    <p>
+                        First answer.
+                        In interdum suscipit ullamcorper.
+                    </p>
+                </answer>
+
+                <answer>
+                    <p>
+                        Second answer.
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+
+                    <p>
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+
+                    <p>
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+                </answer>
+
+                <solution>
+                    <p>
+                        At last, the solution.
+                        In interdum suscipit ullamcorper.
+                        Morbi sit amet malesuada augue, id vestibulum magna.
+                        Nulla blandit dui metus, malesuada mollis sapien
+                        ullamcorper sit amet.
+                        Nulla at neque nisi.
+                        Integer vel porta felis.
+                    </p>
+                </solution>
+            </task>
+
+            <conclusion>
+                <p>
+                    This is a conclusion where you could summarize the exercise.
+                    In interdum suscipit ullamcorper.
+                    Morbi sit amet malesuada augue, id vestibulum magna.
+                    Nulla blandit dui metus, malesuada mollis sapien ullamcorper
+                    sit amet.
+                    Nulla at neque nisi.
+                    Integer vel porta felis.
+                </p>
+            </conclusion>
+        </exercise>
+    </chapter>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
+    <exercises xml:id="runestone-hodgepodge">
+        <title>Hodgepodge</title>
+
+        <exercise label="multifile-program-2">
+            <statement>
+                <p>
+                    This is a test of accessing program resources across pages
+                    by relying on what is in the database.
+                </p>
+            </statement>
+
+            <program interactive="activecode" add-files="addh-v1 addcpp-v1" compile-also="addcpp-v1" language="cpp">
+                <![CDATA[
+                #include "add.h"
+                #include <iostream>
+                using namespace std;
+                int main() {
+                    int a = 1;
+                    int b = 2;
+                    cout << "The sum of " << a << " and " << b << " is " << add(a, b) << endl;
+                }]]>
+            </program>
+        </exercise>
+
+        <exercise label="true-false-exercise-with-tasks-in-exercises">
+            <title>With Tasks in an Exercises Division</title>
+
+            <introduction>
+                <p>
+                    Structured with task, recycled earlier from earlier, to make
+                    sure that the tasks do not get counted as Runestone reading
+                    activities (since they are inside an <tag>exercise</tag>
+                    inside of an <tag>exercises</tag> division.
+                </p>
+            </introduction>
+
+            <task label="true-false-task-in-exercises">
+                <title>True/False</title>
+
+                <idx>vector space</idx>
+                <statement correct="no">
+                    <p>
+                        Every vector space has finite dimension.
+                    </p>
+                </statement>
+
+                <feedback>
+                    <p>
+                        The vector space of all polynomials with finite degree
+                        has a basis, <m>B = \{1,x,x^2,x^3,\dots\}</m>, which is
+                        infinte.
+                    </p>
+                </feedback>
+
+                <hint>
+                    <p>
+                        <m>P_n</m>, the vector space of polynomials with degree
+                        at most <m>n</m>, has dimension <m>n+1</m> by
+                        <xref ref="theorem-exponent-laws"/>.
+                        [Cross-reference is just a demo, content is not
+                        relevant.] What happens if we relax the defintion and
+                        remove the parameter <m>n</m>?
+                    </p>
+                </hint>
+            </task>
+
+            <task label="short-answer-task-in-exercises">
+                <statement>
+                    <p>
+                        Explain your reasoning in the previous question.
+                    </p>
+                </statement>
+                <response/>
+            </task>
+
+            <conclusion>
+                <p>
+                    A sequence of <tag>task</tag> can have a
+                    <tag>conclusion</tag>, like this one, even if they do not
+                    see much use in practice.
+                </p>
+            </conclusion>
+        </exercise>
+    </exercises>
