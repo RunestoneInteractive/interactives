@@ -1,214 +1,44 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
-    <exercises xml:id="matching-exercises">
-        <title>Matching Exercises</title>
+<section xml:id="sec-matching-exercises">
+    <title>Matching Exercises</title>
 
-        <introduction>
+    <introduction>
+        <p>
+            A <tag>matching</tag> interactive asks users to form connections between the
+            <tag>premise</tag> s in the left column and the <tag>response</tag> s on the right.
+            This format supports many-many matches.
+        </p>
+    </introduction>
+
+    <subsection>
+        <title>Status and Notes</title>
+
+        <p>
+            These are conceptually related to the <term>cardsort</term> exercises, but are a
+            completely separate codebase.
+        </p>
+        <observation>
             <p>
-                Matching exercises come in two varieties.
-                Their differences are most noticeable in interactive versions.
-                <dl>
-                    <li>
-                        <title>Cardsort</title>
-
-                        <p>
-                            A <tag>cardsort</tag> asks users to match items in a
-                            1-1 or many-1 fashion.
-                            The interactive version of these involves dragging
-                            <q>card</q> s from the left column (the
-                            <tag>premise</tag> s) into containers on the right
-                            (the <tag>response</tag> s).
-                        </p>
-                    </li>
-
-                    <li>
-                        <title>Matching</title>
-
-                        <p>
-                            A <tag>matching</tag> interactive asks users to form
-                            connections between the <tag>premise</tag> s in the
-                            left column and the <tag>response</tag> s on the
-                            right.
-                            This format supports many-many matches.
-                        </p>
-                    </li>
-                </dl>
+                No known accessibility issues.
             </p>
-        </introduction>
-        <!-- https://www.britannica.com/list/25-decade-defining-events-in-us-history -->
-        <exercise xml:id="matching-one" label="matching-dates">
-            <title>Cardsort Problem, Dates</title>
 
-            <idx>matching US dates</idx>
-            <statement>
-                <p>
-                    Match each event in United States history with the year it
-                    happened.
-                </p>
-            </statement>
+            <p>
+                Last WAVE review: 2026-08-2024
+            </p>
 
-            <feedback>
-                <p>
-                    Review
-                    <url href="https://www.britannica.com/list/25-decade-defining-events-in-us-history" visual="www.britannica.com/list/25-decade-defining-events-in-us-history">Encyclopedia Brittania, 25 Decade-Defining Events in U.S. History</url>
-                    url.
-                </p>
-            </feedback>
-            <cardsort>
-                <match>
-                    <premise order="4">Monroe Doctrine</premise>
-                    <response>1823</response>
-                </match>
-                <match>
-                    <premise order="3">Haymarket Riot</premise>
-                    <response>1886</response>
-                </match>
-                <match>
-                    <premise order="1">Louisiana Purchase</premise>
-                    <response>1803</response>
-                </match>
-                <match>
-                    <premise order="2">Battle of Gettysburg</premise>
-                    <response>1863</response>
-                </match>
-            </cardsort>
-        </exercise>
+            <p>
+                Last screen reader review: 2026-08-2024
+            </p>
+        </observation>
+    </subsection>
 
-        <exercise label="matching-derivatives">
-            <title>Cardsort Problem, Derivatives</title>
-
-            <idx>matching derivatives</idx>
-            <statement>
-                <p>
-                    Match each function with its derivative.
-                </p>
-            </statement>
-
-            <feedback>
-                <p>
-                    Did you compute the derivative of each function in the
-                    premises (left column)?
-                </p>
-            </feedback>
-            <cardsort>
-                <match>
-                    <premise order="1"><m>x^3-6x^2+5</m></premise>
-                    <response><m>3x^2-12x</m></response>
-                </match>
-                <match>
-                    <premise order="3"><m>x^{-3}</m></premise>
-                    <response><m>-3x^{-4}</m></response>
-                </match>
-                <match>
-                    <premise order="2"><m>(x+1)^2</m></premise>
-                    <response><m>2x+2</m></response>
-                </match>
-            </cardsort>
-        </exercise>
-
-        <exercise label="matching-bases">
-            <title>Cardsort Problem, Linear Algebra</title>
-
-            <idx>matching bases and subspaces</idx>
-            <statement>
-                <p>
-                    Match each subspace with a basis for that subspace.
-                    (You may assume that each set is really a basis for at least
-                    one of the subspaces.)
-                </p>
-            </statement>
-
-            <feedback>
-                <p>
-                    Each putative basis is a subset of exactly one of the three
-                    subspaces.
-                    So for each subspace, two of the three sets can be ruled out
-                    by simply testing that the vectors of the basis are members
-                    of the subspace, via the membership criteria.
-                </p>
-            </feedback>
-            <cardsort>
-                <match>
-                    <premise order="1">
-                        <m>\left\{\langle x,y,z\rangle\mid - y + z = 0\right\}</m>
-                    </premise>
-                    <response>
-                        <m>\left\{\langle -4, 3, 3\rangle, \langle 3, -2, -2 \rangle\right\}</m>
-                    </response>
-                </match>
-                <match>
-                    <premise order="3">
-                        <m>\left\{\langle x,y,z\rangle\mid -3x - 5y + z = 0\right\}</m>
-                    </premise>
-                    <response>
-                        <m>\left\{\langle -4, 3, 3\rangle, \langle 5, -4, -5 \rangle\right\}</m>
-                    </response>
-                </match>
-                <match>
-                    <premise order="2">
-                        <m>\left\{\langle x,y,z\rangle\mid -2x - 5y + 2z = 0\right\}</m>
-                    </premise>
-                    <response>
-                        <m>\left\{\langle 3, -2, -2 \rangle, \langle 5, -4, -5 \rangle\right\}</m>
-                    </response>
-                </match>
-            </cardsort>
-
-            <hint>
-                <p>
-                    For openers, a basis for a subspace must be a
-                    <em>subset</em> of the subspace.
-                </p>
-            </hint>
-        </exercise>
-
-        <exercise label="matching-function-types">
-            <title>Cardsort Problem, Function Types</title>
-
-            <idx>matching function types</idx>
-            <statement>
-                <p>
-                    Sort the following functions into their correct categories.
-                </p>
-            </statement>
-
-            <feedback>
-                <p>
-                    Review
-                    <url href="https://activecalculus.org/prelude/sec-changing-linear.html" visual="A precalculus textbook that could help"> Active Prelude to Calculus</url>
-                    url.
-                </p>
-            </feedback>
-            <cardsort>
-                <match>
-                    <response>Linear</response>
-                    <premise order="4"><m>y=5x+3</m></premise>
-                    <premise order="5"><m>\pi x - 6y = \sqrt{2}</m></premise>
-                    <premise order="6"><m>y=\frac{-1}{2}x+e</m></premise>
-                </match>
-                <match>
-                    <response>Quadratic</response>
-                </match>
-                <match>
-                    <premise order="7"><m>y=x^3-x</m></premise>
-                </match>
-                <match>
-                    <response>Exponential</response>
-                    <premise order="1"><m>y=2^x</m></premise>
-                </match>
-                <match>
-                    <response>Power</response>
-                    <premise order="2"><m>y=x^3</m></premise>
-                    <premise order="3"><m>y=\sqrt{x}</m></premise>
-                </match>
-            </cardsort>
-        </exercise>
+    <subsection>
+        <title>Basic Examples</title>
 
         <exercise label="matching-playing-cards">
             <title>Matching Problem, Playing Cards</title>
 
-            <idx><h>matching</h><h>playing cards</h></idx>
             <statement>
                 <p>
                     Associate each playing card with every applicable property.
@@ -218,11 +48,12 @@
             <feedback>
                 <p>
                     This one should not be very hard.
-                    And we have a gratuitous image to test the use of HTML in
-                    this component.
+                    And we have a gratuitous image to test the use of HTML in this component.
                 </p>
 
-                <image source="datafiles/golden-gate-bridge.png" width="50%"/>
+                <image source="datafiles/golden-gate-bridge.png" width="50%">
+                    <shortdescription>The golden gate bridge.</shortdescription>
+                </image>
             </feedback>
             <matching>
                 <premise ref="jack heart">Jack of Hearts</premise>
@@ -245,7 +76,6 @@
         <exercise label="matching-music-history">
             <title>Matching Problem, Popular Music History</title>
 
-            <idx>matching music history</idx>
             <statement>
                 <p>
                     Drag each performer onto every applicable category.
@@ -255,8 +85,8 @@
             <feedback>
                 <p>
                     Paul McCartney, Ringo Starr, Eric Clapton, Elton John.
-                    Jethro Tull is the name of a band, not a performer, and its
-                    best-known member would be the flautist Ian Anderson.
+                    Jethro Tull is the name of a band, not a performer, and its best-known member
+                    would be the flautist Ian Anderson.
                 </p>
             </feedback>
             <matching>
@@ -273,31 +103,40 @@
                 <response xml:id="flute">Flautist</response>
                 <response xml:id="harp">Harpist</response>
                 <response xml:id="piano">Pianist</response>
-                <response xml:id="math">
-                    <em>Some</em> "Math": <m>\sin(x^2)</m>
-                </response>
             </matching>
         </exercise>
+    </subsection>
 
-        <exercise xml:id="cardsort-basic" label="cardsort-basic">
-            <title>Cardsort Problem, Basic Arithmetic</title>
+    <subsection>
+        <title>With Math</title>
 
-            <idx>matching US dates</idx>
+        <exercise label="matching-math">
+            <title>Matching Problem, Math</title>
+
             <statement>
                 <p>
-                    This is a simple exercise to test some grading behavior.
+                    Match each expression with its Big-O classification.
                 </p>
             </statement>
-            <cardsort>
-                <match>
-                    <premise order="1">2 + 3</premise>
-                    <premise order="3">4 + 1</premise>
-                    <response>5</response>
-                </match>
-                <match>
-                    <premise order="2"><m>12 + 2</m></premise>
-                    <response>14</response>
-                </match>
-            </cardsort>
+
+            <feedback>
+                <p>
+                    Study the growth rates of the functions in the left column, and match them with
+                    the appropriate Big-O classification in the right column.
+                </p>
+            </feedback>
+            <matching>
+                <premise order="4"><m>f(n) = 5n+3</m></premise>
+                <premise order="3"><m>f(n) = n^2 + 2n + 1</m></premise>
+                <premise order="1"><m>f(n) = 2^n</m></premise>
+                <premise order="2"><m>f(n) = 10</m></premise>
+                <premise order="5"><m>f(n) = n^2 + 200n</m></premise>
+                <!--  -->
+                <response xml:id="constant"><m>O(1)</m> - (Constant)</response>
+                <response xml:id="linear"><m>O(n)</m> - (Linear)</response>
+                <response xml:id="quadratic"><m>O(n^2)</m> - (Quadratic)</response>
+                <response xml:id="exponential"><m>O(2^n)</m> - (Exponential)</response>
+            </matching>
         </exercise>
-    </exercises>
+    </subsection>
+</section>
