@@ -42,15 +42,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
         <author>
             <personname>Brad Miller</personname>
-            <department>Department of Sanitation</department>
             <institution>Runestone Academy</institution>
             <email>brad@runestone.academy</email>
         </author>
-
-        <editor>
-            <personname>Isaac Newton</personname>
-            <institution>Trinity College</institution>
-        </editor>
 
         <credit>
             <title>Pretext and Most Examples</title>
@@ -62,18 +56,17 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             </author>
         </credit>
 
-        <date><today /></date>
-
         <credit>
-            <title>Most things that work</title>
+            <title>Accessibility Audits and Improvements</title>
             <author>
             <personname>Andrew Scholer</personname>
-            <department>Department of Mathematics</department>
-            <institution>Runestone Academy</institution>
-            <email>andrew@runestone.academy</email>
+            <department>Computer Science</department>
+            <institution>Chemeketa Community College</institution>
+            <email>ascholer@chemeketa.edu</email>
             </author>
         </credit>
 
+        <date><today /></date>
 
         <edition>Annual Edition 2015</edition>
 
@@ -85,7 +78,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <year>2026<ndash />2015</year>
             <holder>Thomas W. Judson, Robert A. Beezer, Brad Miller, Andrew Scholer</holder>
             <minilicense>GFDL License</minilicense>
-            <shortlicense>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.  A copy of the license is included in the appendix entitled <q>GNU Free Documentation License.</q>  All trademarks<trademark /> are the registered<registered /> marks of their respective owners. An <url href="https://example.com" visual="example.com">external link</url> is included<fn>A second footnote, as well.</fn> to test its footnote.</shortlicense>
+            <shortlicense>Permission is granted to copy, distribute and/or modify this document under the terms of the GNU Free Documentation License, Version 1.2 or any later version published by the Free Software Foundation; with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.</shortlicense>
         </copyright>
 
         <keywords>
@@ -95,7 +88,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
         </keywords>
 
         <support>
-        <p>This work has received assistance from numerous volunteer contributors.</p>
+        This work has received assistance from numerous volunteer contributors.
         </support>
     </bibinfo>
 
@@ -120,9 +113,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
 
     <preface xml:id="preface">
 
-        <p>This text is intended to be a home to test the interactive components of <pretext/>.  It is based on the book <em>Abstract Algebra: Theory and Applications</em> by Thomas W. Judson, which is available at <url href="http://abstract.ups.edu" visual="abstract.ups.edu"/>.  The original text was written for a one-semester course in abstract algebra, and it is assumed that the reader has had a course in linear algebra and some experience with proofs.</p>
-
-        <p>We will organize it by chapters and each chapter will highlight things that are fully accessibile and not so accessible.  The goal is to have a fully accessible text, but we are not there yet.  We will also highlight the interactive components of <pretext/> that are available in this text.</p>
+        <p>This work is organized by Runestone interactive type. Each interactive is presented in its own chapter, with sections for variants.</p>
 
     </preface>
 
