@@ -44,28 +44,57 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
     <book xml:id="sample-book" xmlns:xi="http://www.w3.org/2001/XInclude">
         <title><pretext/> Runestone Interactives</title>
 
-        <subtitle>For Accessibility Testing and Validation</subtitle>
-        <xi:include href="./frontmatter.xml"/>
-        <!-- Title Page, Preface, etc. -->
-        <xi:include href="./rune.xml"/>
-        <!-- Runestone -->
-        <!-- Chapters split out of the former "rune" chapter, one per section -->
-        <xi:include href="./rune-inactive-code.xml"/>
-        <xi:include href="./rune-activecode.xml"/>
-        <xi:include href="./rune-code-lens.xml"/>
-        <xi:include href="./rune-coding-exercises.xml"/>
-        <xi:include href="./rune-data-files.xml"/>
-        <xi:include href="./rune-videos-in-runestone.xml"/>
-        <xi:include href="./rune-rune-nested-divisions.xml"/>
-        <xi:include href="./rune-polling.xml"/>
-        <xi:include href="./rune-doenet.xml"/>
-        <xi:include href="./rune-exercises-timed.xml"/>
-        <xi:include href="./rune-interactive-projects.xml"/>
-        <xi:include href="./rune-atomic-video.xml"/>
-        <xi:include href="./rune-section-runestone-assignment-testing.xml"/>
-        <xi:include href="./rune-splice-integration.xml"/>
-        <!-- Many chapters removed from original AATA, here -->
-        <xi:include href="./backmatter.xml"/>
+        <subtitle>Accessibility Testing and Validation</subtitle>
+        <chapter xml:id="core-interactives">
+            <title>Core Interactives</title>
+
+            <introduction>
+                <p>
+                    The Runestone core interactives are the main building blocks for creating
+                    interactive content.
+                </p>
+
+                <p>
+                    Any proposed changes to them must be validated not to create new accessibility
+                    issues, and must be reviewed by the Runestone team before being merged into the
+                    main code base.
+                </p>
+            </introduction>
+
+            <xi:include href="./rune-multiple-choice-exercises.xml"/>
+            <xi:include href="./rune-cardsort-exercises.xml"/>
+            <xi:include href="./rune-matching-exercises.xml"/>
+        </chapter>
+
+        <chapter xml:id="add-interactives">
+            <title>Additional Interactives</title>
+
+            <introduction>
+                <p>
+                    The Runestone additional interactives are secondary tools for creating
+                    interactive content.
+                    They are generally in this category because they are new and experimental,
+                    deprecated, or simply not as widely used.
+                </p>
+            </introduction>
+            <!-- <xi:include href="./rune-matching-exercises.xml"/> -->
+            <!-- <xi:include href="./rune-multiple-choice-exercises.xml"/>
+            <xi:include href="./rune-parsons-exercises.xml"/>
+            <xi:include href="./rune-horizontal-parsons-exercises.xml"/>
+            <xi:include href="./rune-matching-exercises.xml"/>
+            <xi:include href="./rune-clickable-area-exercises.xml"/>
+            <xi:include href="./rune-select-exercises.xml"/>
+            <xi:include href="./rune-short-answer-exercises.xml"/>
+            <xi:include href="./rune-fill-in-exercises-old.xml"/>
+            <xi:include href="./rune-fill-in-exercises.xml"/>
+            <xi:include href="./rune-fill-in-literal-exercises.xml"/>
+            <xi:include href="./rune-runestone-hodgepodge.xml"/>
+            <xi:include href="./rune-reading-questions.xml"/>
+            <xi:include href="./rune-worksheet-groupwork.xml"/>
+            <xi:include href="./rune-groupwork-title.xml"/>
+            <xi:include href="./rune-chapter-exam.xml"/> -->
+        </chapter>
+        <!-- <xi:include href="./backmatter.xml"/> -->
         <!-- GFDL, Hints, Notation -->
     </book>
 </pretext>
