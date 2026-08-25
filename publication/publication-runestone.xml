@@ -63,7 +63,7 @@
   </numbering>
 
   <html short-answer-responses="always">
-    <platform host="web"/>
+    <platform host="runestone"/>
     <!-- The host above could also be "runestone" -->
     <index-page ref="welcomeprogramming" />
 
