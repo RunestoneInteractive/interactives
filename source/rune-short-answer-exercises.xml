@@ -1,19 +1,32 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
-    <exercises xml:id="short-answer-exercises">
-        <title>Short Answer Exercises</title>
+<section xml:id="sec-short-answer-exercises">
+    <title>Short Answer Exercises</title>
+    
+    <observation>
+        <p>
+            No known accessibility issues.
+        </p>
 
-        <exercise label="short-answer-question">
-            <title>Short Answer</title>
+        <p>
+            Last WAVE review: 2026-08-2025
+        </p>
 
-            <statement>
-                <p>
-                    This sample book is configured to make some simple questions
-                    interactive on a capable platform, by adding a
-                    <tag>response</tag> element as a signal.
-                </p>
-            </statement>
-            <response/>
-        </exercise>
-    </exercises>
+        <p>
+            Last screen reader review: 2026-08-2025
+        </p>
+    </observation>
+
+    <exercise label="short-answer-question">
+        <title>Short Answer</title>
+
+        <statement>
+            <p>
+                This sample book is configured to make some simple questions interactive on a
+                capable platform, by adding a <tag>response</tag> element as a signal.
+            </p>
+        </statement>
+        <response/>
+    </exercise>
+</section>

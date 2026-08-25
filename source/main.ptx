@@ -64,6 +64,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <xi:include href="./rune-multiple-choice-exercises.xml"/>
             <xi:include href="./rune-cardsort-exercises.xml"/>
             <xi:include href="./rune-matching-exercises.xml"/>
+            <xi:include href="./rune-short-answer-exercises.xml"/>
         </chapter>
 
         <chapter xml:id="add-interactives">
@@ -77,11 +78,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                     deprecated, or simply not as widely used.
                 </p>
             </introduction>
-            <!-- <xi:include href="./rune-matching-exercises.xml"/> -->
-            <!-- <xi:include href="./rune-multiple-choice-exercises.xml"/>
+            <!-- 
             <xi:include href="./rune-parsons-exercises.xml"/>
             <xi:include href="./rune-horizontal-parsons-exercises.xml"/>
-            <xi:include href="./rune-matching-exercises.xml"/>
             <xi:include href="./rune-clickable-area-exercises.xml"/>
             <xi:include href="./rune-select-exercises.xml"/>
             <xi:include href="./rune-short-answer-exercises.xml"/>
@@ -92,7 +91,9 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <xi:include href="./rune-reading-questions.xml"/>
             <xi:include href="./rune-worksheet-groupwork.xml"/>
             <xi:include href="./rune-groupwork-title.xml"/>
-            <xi:include href="./rune-chapter-exam.xml"/> -->
+            <xi:include href="./rune-select-exercises.xml"/>
+            <xi:include href="./rune-chapter-exam.xml"/>
+             -->
         </chapter>
         <!-- <xi:include href="./backmatter.xml"/> -->
         <!-- GFDL, Hints, Notation -->
