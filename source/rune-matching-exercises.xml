@@ -122,15 +122,17 @@
             <feedback>
                 <p>
                     Study the growth rates of the functions in the left column, and match them with
-                    the appropriate Big-O classification in the right column.
+                    the appropriate Big-O classification in the right column. Some of the math is non-sense
+                    designed to test text-to-speech.
                 </p>
             </feedback>
             <matching>
-                <premise order="4"><m>f(n) = 5n+3</m></premise>
-                <premise order="3"><m>f(n) = n^2 + 2n + 1</m></premise>
-                <premise order="1"><m>f(n) = 2^n</m></premise>
-                <premise order="2"><m>f(n) = 10</m></premise>
-                <premise order="5"><m>f(n) = n^2 + 200n</m></premise>
+                <premise order="4" ref="linear"><m>f(n) = 5n+3</m></premise>
+                <premise order="3" ref="quadratic"><m>f(n) = n^2 + 2n + 1</m></premise>
+                <premise order="1" ref="exponential"><m>f(n) = 2^n</m></premise>
+                <premise order="2" ref="constant"><m>f(n) = 10</m></premise>
+                <premise order="5" ref="quadratic"><m>f(n) = n^2 + 200n</m></premise>
+                <premise order="6" ref="quadratic"><m>\sum_{n=1}^{\infty} 2^{-n} = 1</m></premise>
                 <!--  -->
                 <response xml:id="constant"><m>O(1)</m> - (Constant)</response>
                 <response xml:id="linear"><m>O(n)</m> - (Linear)</response>
