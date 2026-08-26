@@ -65,6 +65,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <xi:include href="./rune-cardsort-exercises.xml"/>
             <xi:include href="./rune-matching-exercises.xml"/>
             <xi:include href="./rune-short-answer-exercises.xml"/>
+            <xi:include href="./rune-clickable-area-exercises.xml"/>
         </chapter>
 
         <chapter xml:id="add-interactives">

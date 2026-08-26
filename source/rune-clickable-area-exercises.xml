@@ -1,122 +1,123 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
-    <exercises xml:id="clickable-area-exercises">
-        <title>Clickable Area Exercises</title>
+<section xml:id="sec-clickable-area-exercises">
+    <title>Clickable Area Exercises</title>
 
-        <exercise label="clickable-text">
-            <title>Clickable Areas, <q>Regular</q> Text</title>
+    <observation>
+        <p>
+            No known accessibility issues.
+        </p>
 
-            <statement>
-                <p>
-                    Identify (by clicking, or by circling) all of the nouns in
-                    this quotation by Eleanor Roosevelt.
-                </p>
-            </statement>
-            <areas>
-                <p>
-                    <q>The <area>future</area> belongs to <area correct="no">those</area> who believe in the <area correct="yes">beauty</area> of <area correct="no">their</area> <area>dreams</area>.</q>
-                </p>
-            </areas>
+        <p>
+            Last WAVE review: 2026-08-2026
+        </p>
 
-            <feedback>
-                <p>
-                    The incorrect words are pronouns.
-                </p>
-            </feedback>
-        </exercise>
+        <p>
+            Last screen reader review: 2026-08-2026
+        </p>
+    </observation>
 
-        <exercise label="clickable-code">
-            <title>Clickable Areas, Code</title>
+    <exercise label="clickable-text">
+        <title>Clickable Areas, <q>Regular</q> Text</title>
 
-            <statement>
-                <p>
-                    Identify (by clicking, or by circling) all of the assignment
-                    statements in this Python function.
-                </p>
-            </statement>
-            <areas language="python">
-                <cline><area correct="no">def main():</area></cline>
-                <cline>    <area correct="yes">x = 4</area></cline>
-                <cline>    for i in range(5):</cline>
-                <cline>        <area>y = i</area></cline>
-                <cline>        <area correct="no">if y &gt; 2:</area></cline>
-                <cline>            print(y)</cline>
-            </areas>
+        <statement>
+            <p>
+                Identify (by clicking, or by circling) all of the nouns in this quotation by Eleanor
+                Roosevelt.
+            </p>
+        </statement>
+        <areas>
+            <p>
+                <q>The <area>future</area> belongs to <area correct="no">those</area> who believe in the <area correct="yes">beauty</area> of <area correct="no">their</area> <area>dreams</area>.</q>
+            </p>
+        </areas>
 
-            <feedback>
-                <p>
-                    Remember, the operator <c>=</c> is used for assignment.
-                </p>
-            </feedback>
-        </exercise>
+        <feedback>
+            <p>
+                The incorrect words are pronouns.
+            </p>
+        </feedback>
+    </exercise>
 
-        <exercise label="clickable-table">
-            <title>Clickable Areas, Text in a Table</title>
+    <exercise label="clickable-code">
+        <title>Clickable Areas, Code</title>
 
-            <statement>
-                <p>
-                    A two-dimensional array was created in Python with the list
-                    comprehension:
-                    <cd>
-                        <cline>[[0 for x in range(3)] for y in range(2)]</cline>
-                    </cd>
-                    Then the values were (mostly) changed from zeros and the
-                    final array is shown below.
-                </p>
+        <statement>
+            <p>
+                Identify (by clicking, or by circling) all of the assignment statements in this
+                Python function.
+            </p>
+        </statement>
+        <areas language="python">
+            <cline><area correct="no">def main():</area></cline>
+            <cline>    <area correct="yes">x = 4</area></cline>
+            <cline>    for i in range(5):</cline>
+            <cline>        <area>y = i</area></cline>
+            <cline>        <area correct="no">if y &gt; 2:</area></cline>
+            <cline>            print(y)</cline>
+        </areas>
 
-                <p>
-                    Identify (by clicking, or by circling) all of the boolean
-                    values in the array.
-                </p>
-                <!-- <p>Note that every entry is inline code, authored with a <tag>c</tag>.</p> -->
-            </statement>
-            <areas>
-                <tabular top="minor" bottom="minor" left="minor" right="minor">
-                    <row>
-                        <cell><c>42</c></cell>
-                        <cell><area><c>True</c></area></cell>
-                        <cell><area correct="no"><c>'towel'</c></area></cell>
-                    </row>
+        <feedback>
+            <p>
+                Remember, the operator <c>=</c> is used for assignment.
+            </p>
+        </feedback>
+    </exercise>
 
-                    <row>
-                        <cell><area correct="no"><c>'true'</c></area></cell>
-                        <cell><c>0</c></cell>
-                        <cell><area><c>False</c></area></cell>
-                    </row>
-                </tabular>
+    <exercise label="clickable-table">
+        <title>Clickable Areas, Text in a Table</title>
 
-                <p>
-                    This second table has no <tag>area</tag>, in order to test
-                    CSS for tables.
-                </p>
+        <statement>
+            <p>
+                A two-dimensional array was created in Python with the list comprehension:
+                <cd>
+                    <cline>[[0 for x in range(3)] for y in range(2)]</cline>
+                </cd>
+                Then the values were (mostly) changed from zeros and the final array is shown below.
+            </p>
 
-                <tabular top="minor" bottom="minor" left="minor" right="minor">
-                    <row>
-                        <cell><c>42</c></cell>
-                        <cell><c>True</c></cell>
-                        <cell><c>'towel'</c></cell>
-                    </row>
+            <p>
+                Identify (by clicking, or by circling) all of the boolean values in the array.
+            </p>
 
-                    <row>
-                        <cell><c>'true'</c></cell>
-                        <cell><c>0</c></cell>
-                        <cell><c>False</c></cell>
-                    </row>
-                </tabular>
-            </areas>
+        </statement>
 
-            <hint>
-                <p>
-                    Python boolean variables begin with capital latters.
-                </p>
-            </hint>
+        <areas>
+            <tabular top="minor" bottom="minor" left="minor" right="minor" row-headers="yes">
+                <row header="yes">
+                    <cell></cell>
+                    <cell>0</cell>
+                    <cell>1</cell>
+                    <cell>2</cell>
+                </row>
+                <row>
+                    <cell>0</cell>
+                    <cell><c>42</c></cell>
+                    <cell><area><c>True</c></area></cell>
+                    <cell><area correct="no"><c>'towel'</c></area></cell>
+                </row>
 
-            <feedback>
-                <p>
-                    Python boolean variables are <c>True</c> and <c>False</c>.
-                    A value in quotation marks is a string, not a boolean.
-                </p>
-            </feedback>
-        </exercise>
-    </exercises>
+                <row>
+                    <cell>1</cell>
+                    <cell><area correct="no"><c>'true'</c></area></cell>
+                    <cell><c>0</c></cell>
+                    <cell><area><c>False</c></area></cell>
+                </row>
+            </tabular>
+        </areas>
+
+        <hint>
+            <p>
+                Python boolean variables begin with capital letters.
+            </p>
+        </hint>
+
+        <feedback>
+            <p>
+                Python boolean variables are <c>True</c> and <c>False</c>.
+                A value in quotation marks is a string, not a boolean.
+            </p>
+        </feedback>
+    </exercise>
+</section>
