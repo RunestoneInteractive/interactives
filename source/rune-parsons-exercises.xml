@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
-    <exercises xml:id="parsons-exercises">
-        <title>Parsons Exercises</title>
+<section xml:id="sec-parsons-exercises">
+    <title>Parsons Exercises</title>
+
+    <subsection>
+        <title>Status and Notes</title>
+
+        <observation>
+            <p>
+                No known accessibility issues.
+            </p>
+
+            <p>
+                Last WAVE review: 2026-08-31.
+                WAVE flags the textarea for runnable Parsons as missing a label, but that is a false
+                positive as that textarea is not rendered.
+            </p>
+
+            <p>
+                Last screen reader review: 2026-08-31
+            </p>
+        </observation>
+    </subsection>
+
+    <subsection>
+        <title>Basic Parsons Examples</title>
 
         <exercise label="number-theory-proof" adaptive="yes">
             <title>Parsons Problem, Mathematical Proof</title>
 
-            <idx>even numbers</idx>
             <statement>
                 <p>
-                    Create a proof of the theorem: If <m>n</m> is an even
-                    number, then <m>n\equiv 0\mod 2</m>.
-                </p>
-
-                <p>
-                    [Ed.
-                    If you examine the source, you will also notice the
-                    <tag>exercise</tag> lacks a <attr>language</attr> attribute.
-                    It is relying on the <c>docinfo/parsons/@language</c> value
-                    that is in bookinfo.xml.
-                    If present, that attribute will be used for any Parsons that
-                    lack a <attr>language</attr>.]
+                    Create a proof of the theorem: If <m>n</m> is an even number, then
+                    <m>n\equiv 0\mod 2</m>.
                 </p>
             </statement>
             <blocks>
@@ -45,15 +57,13 @@
 
                     <choice>
                         <p>
-                            Then there exists an <m>m</m> so that
-                            <m>n = 2m + 1</m>.
+                            Then there exists an <m>m</m> so that <m>n = 2m + 1</m>.
                         </p>
                     </choice>
                 </block>
                 <block order="1" correct="no">
                     <p>
-                        Click the heels of your ruby slippers together three
-                        times.
+                        Click the heels of your ruby slippers together three times.
                     </p>
                 </block>
                 <block order="5">
@@ -88,221 +98,27 @@
             </hint>
         </exercise>
 
-        <exercise label="parsons-with-partial-order" adaptive="yes" indentation="hide" language="python">
-            <title>Parsons Problem, Partial Ordering</title>
-
-            <statement>
-                <p>
-                    Parsons problems can specify a partial ordering that allows
-                    for multiple valid solutions.
-                </p>
-
-                <p>
-                    Try putting the blocks in a valid order to calculate and
-                    print <c>c</c> Only use the required blocks.
-                    There are many valid orderings.
-                </p>
-            </statement>
-            <blocks>
-                <block order="5" name="math">
-                    <cline>import math</cline>
-                </block>
-                <block order="7" correct="no">
-                    <cline>import antigravity</cline>
-                </block>
-                <block order="6" name="a">
-                    <cline>a = 3</cline>
-                </block>
-                <block order="2" name="b">
-                    <choice correct="yes">
-                        <cline>b = 4</cline>
-                    </choice>
-
-                    <choice>
-                        <cline>4 = b</cline>
-                    </choice>
-                </block>
-                <block order="3" name="cSq" depends="a b">
-                    <cline>cSquared = a ** 2 + b ** 2</cline>
-                </block>
-                <block order="1" name="c" depends="cSq math">
-                    <cline>c = math.sqrt(cSquared)</cline>
-                </block>
-                <block order="4" depends="c">
-                    <cline>print(c)</cline>
-                </block>
-            </blocks>
-        </exercise>
-
         <exercise label="prime-number-program-indent-yes" language="python" adaptive="yes" indentation="hide">
             <title>Parsons Problem, Programming</title>
 
-            <idx>prime numbers</idx>
-            <idx>Sieve of Eratosthenes</idx>
             <statement>
                 <p>
-                    The Sieve of Eratosthenes computes prime numbers by starting
-                    with a finite list of the integers bigger than 1.
-                    The first member of the list is a prime and is
-                    saved/recorded.
-                    Then all multiples of that prime (which not a prime,
-                    excepting the prime itself!) are removed from the list.
-                    Now the first number remaining in the list is the next prime
-                    number.
+                    The Sieve of Eratosthenes computes prime numbers by starting with a finite list
+                    of the integers bigger than 1.
+                    The first member of the list is a prime and is saved/recorded.
+                    Then all multiples of that prime (which not a prime, excepting the prime
+                    itself!) are removed from the list.
+                    Now the first number remaining in the list is the next prime number.
                     And the process repeats.
                 </p>
 
                 <p>
-                    The code blocks below can be rearranged to form one of the
-                    many possible programs to implement this algorithm to
-                    compute a list of all the primes less than <m>250</m>.
+                    The code blocks below can be rearranged to form one of the many possible
+                    programs to implement this algorithm to compute a list of all the primes less
+                    than <m>250</m>.
                     [Ed.
-                    this version of this problem requires the reader to provide
-                    the necessary indentation.]
-                </p>
-
-                <p>
-                    This reprises <xref ref="sieve-primes"/>.
-                </p>
-            </statement>
-            <blocks>
-                <block order="6">
-                    <cline>n = 250</cline>
-                </block>
-                <block order="2">
-                    <choice correct="yes">
-                        <cline>primes = []</cline>
-                        <cline>candidates = list(range(2,n))</cline>
-                    </choice>
-
-                    <choice>
-                        <cline>candidates = []</cline>
-                        <cline>primes = list(range(2,n))</cline>
-                    </choice>
-                </block>
-                <block order="7" correct="no">
-                    <cline>primes = candidates + [p]</cline>
-                </block>
-                <block order="8">
-                    <cline>while candidates:</cline>
-                </block>
-                <block order="3">
-                    <cline>    p = candidates[0]</cline>
-                    <cline>    primes.append(p)</cline>
-                </block>
-                <block order="1">
-                    <cline>    for nonprime in range(p, n, p):</cline>
-                </block>
-                <block order="5">
-                    <cline>        if nonprime in candidates:</cline>
-                    <cline>            candidates.remove(nonprime)</cline>
-                </block>
-                <block order="4">
-                    <cline>print(primes)</cline>
-                </block>
-            </blocks>
-        </exercise>
-
-        <exercise label="parsons-with-executable" language="python" adaptive="yes" indentation="show">
-            <title>Parsons Problem with executable</title>
-
-            <statement>
-                <p>
-                    Parsons problems that have a <c>language</c> specified that
-                    corresponds to a valid activecode language can be made
-                    runnable.
-                </p>
-
-                <p>
-                    Complete the Python function <c>isolateRed(p)</c> If either
-                    the blue or green is higher than the red, average the three
-                    color values and set red, green, and blue to be that
-                    average.
-                    Otherwise, do nothing to <c>p</c>.
-                </p>
-
-                <p>
-                    After you check a correct answer you will be able to Run the
-                    code you created - it will be used to modify the image shown
-                    below.
-                </p>
-                <!-- 300px wide so 300/600 = 50% -->
-                <datafile label="golden-gate2" filename="golden-gate.png">
-                    <image source="datafiles/golden-gate-bridge.png" width="50%"/>
-                </datafile>
-            </statement>
-            <blocks>
-                <block order="4">
-                    <cline>def isolateRed(p):</cline>
-                </block>
-                <block order="2">
-                    <cline>    if p.green &gt; p.red or p.blue &gt; p.red:</cline>
-                </block>
-                <block order="3">
-                    <cline>        avg = (p.red + p.blue + p.green) / 3</cline>
-                </block>
-                <block order="1">
-                    <cline>        p.red = avg</cline>
-                    <cline>        p.blue = avg</cline>
-                    <cline>        p.green = avg</cline>
-                </block>
-            </blocks>
-            <!-- note that the blank lines in pre and postabmbles are intentional to -->
-            <!-- separate those from user code, but you might not always want them   -->
-            <program-preamble>
-                print("Using your code to isolate the red in the Golden Gate Bridge image.")
-                import image
-
-            </program-preamble>
-            <!-- the program is empty as its contents will be replaced by student code -->
-            <program datafile="golden-gate.png" codelens="no"/>
-            <program-postamble>
-
-                img = image.Image("golden-gate.png")
-                win = image.ImageWin(img.getWidth(), img.getHeight())
-                img.draw(win)
-
-                # img.setDelay(delay, number of pixels between delay)
-                # setDelay(1, 400) will speed up a lot
-                img.setDelay(1,50)
-
-                for row in range(img.getHeight()):
-                    for col in range(img.getWidth()):
-                        p = img.getPixel(col, row)
-                        isolateRed(p)
-                        img.setPixel(col, row, p)
-            </program-postamble>
-        </exercise>
-
-        <exercise label="prime-number-program-indent-no" language="python" adaptive="yes" indentation="show">
-            <title>Parsons Problem, Programming</title>
-
-            <idx>prime numbers</idx>
-            <idx>Sieve of Eratosthenes</idx>
-            <statement>
-                <p>
-                    The Sieve of Eratosthenes computes prime numbers by starting
-                    with a finite list of the integers bigger than 1.
-                    The first member of the list is a prime and is
-                    saved/recorded.
-                    Then all multiples of that prime (which not a prime,
-                    excepting the prime itself!) are removed from the list.
-                    Now the first number remaining in the list is the next prime
-                    number.
-                    And the process repeats.
-                </p>
-
-                <p>
-                    The code blocks below can be rearranged to form one of the
-                    many possible programs to implement this algorithm to
-                    compute a list of all the primes less than <m>250</m>.
-                    [Ed.
-                    this version of this problem does not require the reader to
-                    provide the necessary indentation, which is the default.]
-                </p>
-
-                <p>
-                    This reprises <xref ref="sieve-primes"/>.
+                    this version of this problem requires the reader to provide the necessary
+                    indentation.]
                 </p>
             </statement>
             <blocks>
@@ -349,11 +165,11 @@
             <idx>even numbers</idx>
             <statement>
                 <p>
-                    Create a proof of the theorem: If <m>n</m> is an even
-                    number, then <m>n\equiv 0\mod 2</m>.
+                    Create a proof of the theorem: If <m>n</m> is an even number, then
+                    <m>n\equiv 0\mod 2</m>.
                     [Ed.
-                    This version has numbered blocks, online they are on the
-                    right end of the block.]
+                    This version has numbered blocks, online they are on the right end of the
+                    block.]
                 </p>
             </statement>
             <blocks numbered="right">
@@ -377,15 +193,13 @@
 
                     <choice>
                         <p>
-                            Then there exists an <m>m</m> so that
-                            <m>n = 2m + 1</m>.
+                            Then there exists an <m>m</m> so that <m>n = 2m + 1</m>.
                         </p>
                     </choice>
                 </block>
                 <block order="1" correct="no">
                     <p>
-                        Click the heels of your ruby slippers together three
-                        times.
+                        Click the heels of your ruby slippers together three times.
                     </p>
                 </block>
                 <block order="5">
@@ -418,24 +232,21 @@
             <idx>Sieve of Eratosthenes</idx>
             <statement>
                 <p>
-                    The Sieve of Eratosthenes computes prime numbers by starting
-                    with a finite list of the integers bigger than 1.
-                    The first member of the list is a prime and is
-                    saved/recorded.
-                    Then all multiples of that prime (which not a prime,
-                    excepting the prime itself!) are removed from the list.
-                    Now the first number remaining in the list is the next prime
-                    number.
+                    The Sieve of Eratosthenes computes prime numbers by starting with a finite list
+                    of the integers bigger than 1.
+                    The first member of the list is a prime and is saved/recorded.
+                    Then all multiples of that prime (which not a prime, excepting the prime
+                    itself!) are removed from the list.
+                    Now the first number remaining in the list is the next prime number.
                     And the process repeats.
                 </p>
 
                 <p>
-                    The code blocks below can be rearranged to form one of the
-                    many possible programs to implement this algorithm to
-                    compute a list of all the primes less than <m>250</m>.
+                    The code blocks below can be rearranged to form one of the many possible
+                    programs to implement this algorithm to compute a list of all the primes less
+                    than <m>250</m>.
                     [Ed.
-                    This version has numbered blocks, online they are on the
-                    left end of the block.]
+                    This version has numbered blocks, online they are on the left end of the block.]
                 </p>
 
                 <p>
@@ -479,84 +290,79 @@
                 </block>
             </blocks>
         </exercise>
+    </subsection>
 
-        <exercise label="number-theory-proof-fixed-order" adaptive="yes">
-            <title>Parsons Problem, Mathematical Proof, Fixed Order</title>
+    <subsection>
+        <title>Runable Parsons Examples</title>
 
-            <idx>even numbers</idx>
+        <exercise label="parsons-with-executable" language="python" adaptive="yes" indentation="show">
+            <title>Parsons Problem with executable</title>
+
             <statement>
                 <p>
-                    Create a proof of the theorem: If <m>n</m> is an even
-                    number, then <m>n\equiv 0\mod 2</m>.
-                    [Ed.
-                    This version is a copy of the first Parsons problem in this
-                    section, now with <attr>randomize</attr> set to <c>no</c> on
-                    the <tag>blocks</tag>, so the blocks always appear in the
-                    fixed order given by the <attr>order</attr> attributes,
-                    instead of being shuffled.]
+                    Parsons problems that have a <c>language</c> specified that corresponds to a
+                    valid activecode language can be made runnable.
                 </p>
+
+                <p>
+                    Complete the Python function <c>isolateRed(p)</c> If either the blue or green is
+                    higher than the red, average the three color values and set red, green, and blue
+                    to be that average.
+                    Otherwise, do nothing to <c>p</c>.
+                </p>
+
+                <p>
+                    After you check a correct answer you will be able to Run the code you created -
+                    it will be used to modify the image shown below.
+                </p>
+                <!-- 300px wide so 300/600 = 50% -->
+                <datafile label="golden-gate2" filename="golden-gate.png">
+                    <image source="datafiles/golden-gate-bridge.png" width="50%">
+                        <shortdescription>The golden gate bridge</shortdescription>
+                    </image>
+                </datafile>
             </statement>
-            <blocks randomize="no">
+            <blocks>
+                <block order="4">
+                    <cline>def isolateRed(p):</cline>
+                </block>
                 <block order="2">
-                    <p>
-                        Suppose <m>n</m> is even.
-                    </p>
+                    <cline>    if p.green &gt; p.red or p.blue &gt; p.red:</cline>
                 </block>
                 <block order="3">
-                    <choice>
-                        <p>
-                            Then <m>n</m> is a prime number.
-                        </p>
-                    </choice>
-
-                    <choice correct="yes">
-                        <p>
-                            Then there exists an <m>m</m> so that <m>n = 2m</m>.
-                        </p>
-                    </choice>
-
-                    <choice>
-                        <p>
-                            Then there exists an <m>m</m> so that
-                            <m>n = 2m + 1</m>.
-                        </p>
-                    </choice>
+                    <cline>        avg = (p.red + p.blue + p.green) / 3</cline>
                 </block>
-                <block order="1" correct="no">
-                    <p>
-                        Click the heels of your ruby slippers together three
-                        times.
-                    </p>
-                </block>
-                <block order="5">
-                    <p>
-                        So <m>n = 2m + 0</m>.
-                    </p>
-
-                    <p>
-                        This is a superfluous second paragraph in this block.
-                    </p>
-                </block>
-                <block order="4">
-                    <p>
-                        Thus <m>n\equiv 0\mod 2</m>.
-                    </p>
-                </block>
-                <block order="6" correct="no">
-                    <p>
-                        And a little bit of irrelevant multi-line math
-                        <md>
-                            <mrow>c^2&amp;a^2+b^2</mrow>
-                            <mrow>&amp;x^2+y^2</mrow>
-                        </md>.
-                    </p>
+                <block order="1">
+                    <cline>        p.red = avg</cline>
+                    <cline>        p.blue = avg</cline>
+                    <cline>        p.green = avg</cline>
                 </block>
             </blocks>
+            <!-- note that the blank lines in pre and postabmbles are intentional to -->
+            <!-- separate those from user code, but you might not always want them   -->
+            <program-preamble>
+                print("Using your code to isolate the red in the Golden Gate Bridge image.")
+                import image
 
-            <hint>
-                <p>
-                    Dorothy will not be much help with this proof.
-                </p>
-            </hint>
+            </program-preamble>
+            <!-- the program is empty as its contents will be replaced by student code -->
+            <program datafile="golden-gate.png" codelens="no"/>
+            <program-postamble>
+
+                img = image.Image("golden-gate.png")
+                win = image.ImageWin(img.getWidth(), img.getHeight())
+                img.draw(win)
+
+                # img.setDelay(delay, number of pixels between delay)
+                # setDelay(1, 400) will speed up a lot
+                img.setDelay(1,50)
+
+                for row in range(img.getHeight()):
+                    for col in range(img.getWidth()):
+                        p = img.getPixel(col, row)
+                        isolateRed(p)
+                        img.setPixel(col, row, p)
+            </program-postamble>
         </exercise>
-    </exercises>
+    </subsection>
+</section>
