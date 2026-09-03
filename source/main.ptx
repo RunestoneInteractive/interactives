@@ -67,6 +67,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <xi:include href="./rune-short-answer-exercises.xml"/>
             <xi:include href="./rune-clickable-area-exercises.xml"/>
             <xi:include href="./rune-parsons-exercises.xml"/>
+            <xi:include href="./rune-horizontal-parsons-exercises.xml"/>
         </chapter>
 
         <chapter xml:id="add-interactives">
@@ -81,8 +82,6 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                 </p>
             </introduction>
             <!-- 
-            <xi:include href="./rune-parsons-exercises.xml"/>
-            <xi:include href="./rune-horizontal-parsons-exercises.xml"/>
             <xi:include href="./rune-clickable-area-exercises.xml"/>
             <xi:include href="./rune-select-exercises.xml"/>
             <xi:include href="./rune-short-answer-exercises.xml"/>

@@ -1,252 +1,171 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
-    <exercises xml:id="horizontal-parsons-exercises">
-        <title>Horizontal Parsons Exercises</title>
+<section xml:id="sec-horizontal-parsons-exercises">
+    <title>Horizontal Parsons Exercises</title>
 
-        <exercise label="horizontal-parson-sql-statement-simple" language="sql">
-            <title>Parsons Problem, SQL statement</title>
+    <observation>
+        <p>
+            No known accessibility issues.
+        </p>
 
-            <statement>
-                <p>
-                    Form the SQL statement by rearranging the four blocks.
-                </p>
-                <!-- <p>Note: for this SQL exercise, and the others following, blocks are authored as code via a <tag>c</tag> element, in order that the text pass through to the compiler with no changes.</p> -->
-            </statement>
-            <blocks layout="horizontal" randomize="yes">
-                <block order="2">
-                    <c>SELECT</c>
-                </block>
-                <block order="1">
-                    <c>*</c>
-                </block>
-                <block order="4">
-                    <c>FROM</c>
-                </block>
-                <block order="3">
-                    <c>test</c>
-                </block>
-            </blocks>
-        </exercise>
+        <p>
+            Last WAVE review: 2026-09-03
+        </p>
 
-        <exercise label="horizontal-parson-python-test" language="python">
-            <title>Parsons Problem, Python import</title>
+        <p>
+            Last screen reader review: 2026-09-03
+        </p>
+    </observation>
 
-            <statement>
-                <p>
-                    Testing syntax highlighting.
-                </p>
-            </statement>
-            <blocks layout="horizontal" randomize="yes">
-                <block order="2">
-                    <c>from</c>
-                </block>
-                <block order="1">
-                    <c>math</c>
-                </block>
-                <block order="4">
-                    <c>import</c>
-                </block>
-                <block order="3">
-                    <c>pi</c>
-                </block>
-            </blocks>
-        </exercise>
+    <exercise label="horizontal-parson-sql-statement-simple" language="sql">
+        <title>Parsons Problem, SQL statement</title>
+        <statement>
+            <p>
+                Form the SQL statement by rearranging the four blocks.
+            </p>
+            <!-- <p>Note: for this SQL exercise, and the others following, blocks are authored as code via a <tag>c</tag> element, in order that the text pass through to the compiler with no changes.</p> -->
+        </statement>
+        <blocks layout="horizontal" randomize="yes">
+            <block order="2">
+                <c>SELECT</c>
+            </block>
+            <block order="1">
+                <c>*</c>
+            </block>
+            <block order="4">
+                <c>FROM</c>
+            </block>
+            <block order="3">
+                <c>test</c>
+            </block>
+        </blocks>
+    </exercise>
 
-        <exercise label="horizontal-parson-sql-statement-no-randomize" language="sql">
-            <title>Parsons Problem, SQL statement, no randomization</title>
-
-            <statement>
-                <p>
-                    Form the SQL statement by rearranging the four blocks.
-                    This version of this problem will <em>always</em> present
-                    the blocks in the same fixed order (but incorrect,
-                    hopefully!), as prescribed by the author in the source.
-                </p>
-            </statement>
-            <blocks layout="horizontal" randomize="no">
-                <block order="2">
-                    <c>SELECT</c>
-                </block>
-                <block order="1">
-                    <c>*</c>
-                </block>
-                <block order="4">
-                    <c>FROM</c>
-                </block>
-                <block order="3">
-                    <c>test</c>
-                </block>
-            </blocks>
-        </exercise>
-
-        <exercise label="horizontal-parson-sql-statement-with-db" language="sql" database="sql/test.db">
-            <title>Parsons Problem, SQL statement, automatic feedback</title>
-
-            <statement>
-                <p>
-                    Form the SQL statement by rearranging the four blocks.
-                </p>
-            </statement>
-            <blocks layout="horizontal" randomize="yes">
-                <block order="2">
-                    <c>SELECT</c>
-                </block>
-                <block order="1">
-                    <c>*</c>
-                </block>
-                <block order="4">
-                    <c>FROM</c>
-                </block>
-                <block order="3">
-                    <c>test</c>
-                </block>
-            </blocks>
-            <tests>
-                assert 1,1 == world
+    <exercise label="horizontal-parson-sql-statement-with-db" language="sql" database="sql/test.db">
+        <title>Parsons Problem, SQL statement, automatic feedback</title>
+        <statement>
+            <p>
+                Form the SQL statement by rearranging the four blocks.
+            </p>
+        </statement>
+        <blocks layout="horizontal" randomize="yes">
+            <block order="2">
+                <c>SELECT</c>
+            </block>
+            <block order="1">
+                <c>*</c>
+            </block>
+            <block order="4">
+                <c>FROM</c>
+            </block>
+            <block order="3">
+                <c>test</c>
+            </block>
+        </blocks>
+        <tests>
+            assert 1,1 == world
             assert 0,1 == hello
             assert 2,1 == 42
-            </tests>
-        </exercise>
+        </tests>
+    </exercise>
 
-        <exercise label="horizontal-parson-natural" language="natural">
-            <title>Parsons Problem, Natural Language</title>
+    <exercise label="horizontal-parson-natural-distractor" language="natural">
+        <title>Parsons Problem, Natural Language, with Distractors</title>
+        <statement>
+            <p>
+                Form the sentence often used to show font samples.
+                Again, but now with distractors.
+            </p>
+        </statement>
+        <blocks layout="horizontal">
+            <block ref="font-the-two" order="7"/>
+            <block order="10" correct="yes">
+                quick
+            </block>
+            <block order="2">
+                brown
+            </block>
+            <block order="3">
+                fox
+            </block>
+            <block order="1">
+                jumped
+            </block>
+            <block order="8" correct="no">
+                foo
+            </block>
+            <block order="6">
+                over
+            </block>
+            <block xml:id="font-the-two">
+                the
+            </block>
+            <block order="9">
+                lazy
+            </block>
+            <block order="5" correct="no">
+                bar
+            </block>
+            <block order="4">
+                dog
+            </block>
+        </blocks>
+    </exercise>
 
-            <statement>
-                <p>
-                    Form the sentence often used to show font samples.
-                    You can reuse blocks as needed.
-                </p>
-            </statement>
-            <blocks layout="horizontal" reuse="yes" randomize="yes">
-                <block ref="font-the" order="6"/>
-                <block order="8">
-                    quick
-                </block>
-                <block order="2">
-                    brown
-                </block>
-                <block order="3">
-                    fox
-                </block>
-                <block order="1">
-                    jumped
-                </block>
-                <block order="5">
-                    over
-                </block>
-                <block xml:id="font-the">
-                    the
-                </block>
-                <block order="7">
-                    lazy
-                </block>
-                <block order="4">
-                    dog
-                </block>
-            </blocks>
-        </exercise>
+    <exercise label="horizontal-parson-sql-statement-reusable" language="sql">
+        <title>Parsons Problem, SQL statement, reusable</title>
+        <statement>
+            <p>
+                Form the SQL statement by rearranging the four blocks.
+                Same problem as above, but we allow blocks to be reused (even though the solution
+                does not require that).
+            </p>
+        </statement>
+        <blocks layout="horizontal" reuse="yes" randomize="yes">
+            <block order="2">
+                <c>SELECT</c>
+            </block>
+            <block order="1">
+                <c>*</c>
+            </block>
+            <block order="4">
+                <c>FROM</c>
+            </block>
+            <block order="3">
+                <c>test</c>
+            </block>
+        </blocks>
+    </exercise>
 
-        <exercise label="horizontal-parson-natural-distractor" language="natural">
-            <title>Parsons Problem, Natural Language, with Distractors</title>
-
-            <statement>
-                <p>
-                    Form the sentence often used to show font samples.
-                    Again, but now with distractors.
-                </p>
-            </statement>
-            <blocks layout="horizontal">
-                <block ref="font-the-two" order="7"/>
-                <block order="10" correct="yes">
-                    quick
-                </block>
-                <block order="2">
-                    brown
-                </block>
-                <block order="3">
-                    fox
-                </block>
-                <block order="1">
-                    jumped
-                </block>
-                <block order="8" correct="no">
-                    foo
-                </block>
-                <block order="6">
-                    over
-                </block>
-                <block xml:id="font-the-two">
-                    the
-                </block>
-                <block order="9">
-                    lazy
-                </block>
-                <block order="5" correct="no">
-                    bar
-                </block>
-                <block order="4">
-                    dog
-                </block>
-            </blocks>
-        </exercise>
-
-        <exercise label="horizontal-parson-sql-statement-reusable" language="sql">
-            <title>Parsons Problem, SQL statement, reusable</title>
-
-            <statement>
-                <p>
-                    Form the SQL statement by rearranging the four blocks.
-                    Same problem as above, but we allow blocks to be reused
-                    (even though the solution does not require that).
-                </p>
-            </statement>
-            <blocks layout="horizontal" reuse="yes" randomize="yes">
-                <block order="2">
-                    <c>SELECT</c>
-                </block>
-                <block order="1">
-                    <c>*</c>
-                </block>
-                <block order="4">
-                    <c>FROM</c>
-                </block>
-                <block order="3">
-                    <c>test</c>
-                </block>
-            </blocks>
-        </exercise>
-
-        <exercise label="horizontal-parson-math-test" language="math">
-            <title>Parsons Problem with math blocks</title>
-
-            <statement>
-                <p>
-                    Testing math mode blocks - correct answer is
-                    <m>\pi\sum\beta\alpha</m>
-                </p>
-            </statement>
-            <blocks layout="horizontal" randomize="yes">
-                <block order="2">
-                    <m>
-                        \pi
-                    </m>
-                </block>
-                <block order="1">
-                    <m>
-                        \sum
-                    </m>
-                </block>
-                <block order="4">
-                    <m>
-                        \beta
-                    </m>
-                </block>
-                <block order="3">
-                    <m>
-                        \alpha
-                    </m>
-                </block>
-            </blocks>
-        </exercise>
-    </exercises>
+    <exercise label="horizontal-parson-math-test" language="math">
+        <title>Parsons Problem with math blocks</title>
+        <statement>
+            <p>
+                Testing math mode blocks - correct answer is <m>\pi\sum\beta\alpha</m>
+            </p>
+        </statement>
+        <blocks layout="horizontal" randomize="yes">
+            <block order="2">
+                <m>
+                    \pi
+                </m>
+            </block>
+            <block order="1">
+                <m>
+                    \sum
+                </m>
+            </block>
+            <block order="4">
+                <m>
+                    \beta
+                </m>
+            </block>
+            <block order="3">
+                <m>
+                    \alpha
+                </m>
+            </block>
+        </blocks>
+    </exercise>
+</section>
