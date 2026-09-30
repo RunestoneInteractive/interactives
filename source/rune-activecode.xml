@@ -1,137 +1,123 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
-    <chapter xml:id="activecode">
+    <section xml:id="activecode">
         <title>ActiveCode</title>
+        
+        <observation>
+            <p>
+                Known accessibility issues:
+                <ul>
+                    <li>
+                        <p>
+                            Before the Activecode text entry area there is an empty textbox that is a tab stop for screen readers. This is a known issue with the CodeMirror 5 that renders the text entry area.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Line highlights and locked regions are not announced to screen readers. This is a known issue with the CodeMirror 5 that renders the text entry area.
+                        </p>
+                    </li>
+                    <li>
+                        <p>
+                            Optional Codelens program traces have accessibility issues with screen readers. See <xref ref="code-lens"/> for details.
+                        </p>
+                    </li>
+                </ul>
+            </p>
 
-        <p>
-            Programs in supported languages are made interactive in HTML when
-            <attr>interactive</attr> is set to <c>activecode</c>.
-            Some languages can be made interactive on any server, while others
-            require being served from Runestone servers.
-            See
-            <url href="https://pretextbook.org/doc/guide/html/topic-program-console.html#interactive-program-capabilities">Interactive Programs Capabilities in the PreTeXt Guide</url>
-            for a list of what languages are supported in which environs.
-        </p>
+            <p>
+                Last WAVE review: 2026-09-28
+            </p>
+
+            <p>
+                Last screen reader review: 2026-09-28
+            </p>
+        </observation>
 
         <listing xml:id="program-activecode-python">
             <title>
-                An interactive Python program, using
-                <pubtitle>Runestone</pubtitle>
+                An interactive Python program
             </title>
 
-            <program xml:id="python-hello-world" interactive="activecode" language="python" label="hello-world">
+            <program xml:id="python-hello-world" interactive="activecode" language="python" download="yes" label="hello-world">
                 <code>
                 print("Hello, World!")
                 </code>
             </program>
         </listing>
 
-        <p>
-            Otherwise they are rendered as text with syntax coloring.
-            Either way, if a <attr>language</attr> is not specified,
-            <c>docinfo/programs/@language</c> will be checked to determine what
-            language to assume the code is written in.
-        </p>
-
-        <listing xml:id="program-activecode-python2">
+        <listing xml:id="program-activecode-python-autorun">
             <title>
-                An interactive Python program, using
-                <pubtitle>Runestone</pubtitle>
+                An interactive Python program that runs automatically when the page loads
             </title>
 
-            <program xml:id="python-hello-world2" label="hello-world2">
+            <program interactive="activecode" language="python" autorun="yes" label="hello-world-autorun">
                 <code>
                 print("Hello, World!")
                 </code>
             </program>
         </listing>
 
-        <p>
-            A C program will only be interactive if hosted on a Runestone
-            server.
-        </p>
-
-        <listing xml:id="program-activecode-c">
+        <listing xml:id="program-activecode-python-autorun-error">
             <title>
-                An C program, interactive on a <pubtitle>Runestone</pubtitle>
-                server
+                An interactive Python program that runs automatically when the page loads, but has an error
             </title>
 
-            <program xml:id="c-hello-world" label="c-hello-world" interactive="activecode" language="c">
+            <program interactive="activecode" language="python" autorun="yes" label="hello-world-autorun-error">
                 <code>
-                #include &lt;stdio.h&gt;
-
-                int main(void)
-                {
-                    puts("Hello, world!");
-                }
+                print("Hello, World!")
+                print(ooops)
                 </code>
             </program>
         </listing>
 
-        <p>
-            A Java program will only be interactive if hosted on a Runestone
-            server.
-        </p>
-
-        <listing xml:id="program-activecode-java">
-            <title>
-                A Java program, interactive on a <pubtitle>Runestone</pubtitle>
-                server
-            </title>
-
-            <program xml:id="java-hello-world" label="java-hello-world" interactive="activecode" language="java">
-                <code>
-                public class HelloWorld {
-                    public static void main(String[] args) {
-                        System.out.println("Hi world!");
-                    }
-                }
-                </code>
-            </program>
-        </listing>
-
-        <p>
-            Javascript programs are made interactive in HTML, on request.
-        </p>
-
-        <listing xml:id="program-activecode-javascript">
-            <title>
-                An interactive JavaScript program, using
-                <pubtitle>Runestone</pubtitle>
-            </title>
-
-            <program xml:id="javascript-hello-world" label="javascript-hello-world" interactive="activecode" language="javascript">
-                <code>
-                document.write('Hello, world!');
-                </code>
-            </program>
-        </listing>
-
-        <p>
-            Some languages, like Java or C++, are only interactive when run on a
-            Runestone server where the code can be compiled and run.
-            Those languages can specify <attr>compiler-args</attr> and
-            <attr>linker-args</attr> or <attr>interpreter-args</attr> as
-            appropriate to the language.
-            Default values for those options can be set in
-            <tag>docinfo/programs</tag>- any defaults set there will be used for
-            any program that lacks the corresponding attribute.
-        </p>
 
         <listing>
-            <title>A C++ program with compiler-args and stdin</title>
+            <title>A program with line highlights</title>
 
-            <p>
-                It may be convenient to set <attr>compiler-args</attr> and
-                <attr>linker-args</attr> at the book level in
-                <tag>docinfo/programs</tag>.
-                Values specified in that location will be used for any
-                <tag>program</tag> that does not override the values by
-                specifying its own attributes.
-            </p>
+            <program interactive="activecode" language="python" label="program-activecode-highlights" highlight-lines="1-2,5">
+                def add(a, b):
+                    return a + b
 
+                # Use the function
+                result = add(2, 3)
+                if result == 5:
+                    print("Test passed")
+                else:
+                    print("Test failed")
+            </program>
+        </listing>
+
+
+        <listing>
+            <title>A Python program with automated tests</title>
+
+            <program interactive="activecode" language="python" label="python-sum-total-two" >
+                <code>
+                loan_amount = [1000, 2000, 3000, 4000]
+                loan_total = 0
+                for loan in loan_amount:
+                    loan_total += loan
+                print(loan_total)
+                </code>
+                <tests>
+                from unittest.gui import TestCaseGui
+
+                class MyTests(TestCaseGui):
+
+                    def testOne(self):
+                        self.assertTrue('loan_total' in self.getEditorText(), "you need a loan_total variable")
+                        self.assertEqual(loan_total, sum(loan_amount), "Use the accumulator pattern to add up all the loans")
+                        self.assertFalse('sum(' in self.getEditorText(), "you may not use sum")
+
+                MyTests().main()
+                </tests>
+            </program>
+        </listing>
+
+        <listing>
+            <title>A C++ program with stdin</title>
             <program interactive="activecode" label="hello-world-cpp" language="cpp" compiler-args="-std=c++17,-Wall,-g" linker-args="-g,-s">
                 <code>
                     #include &lt;iostream&gt;
@@ -147,352 +133,6 @@
                 <stdin>Jane</stdin>
             </program>
         </listing>
-
-        <listing xml:id="program-static-java">
-            <title>A static Java program</title>
-
-            <program xml:id="java-static" interactive="no" language="java">
-                <code>
-                import javax.swing.JFrame;  //Importing class JFrame
-                import javax.swing.JLabel;  //Importing class JLabel
-                public class HelloWorld {
-                    public static void main(String[] args) {
-                        JFrame frame = new JFrame();           //Creating frame
-                        frame.setTitle("Hi!");                 //Setting title frame
-                        frame.add(new JLabel("Hello, world!"));//Adding text to frame
-                        frame.pack();                          //Setting size to smallest
-                        frame.setLocationRelativeTo(null);     //Centering frame
-                        frame.setVisible(true);                //Showing frame
-                    }
-                }
-                </code>
-            </program>
-        </listing>
-
-        <p>
-            An Octave program will also only be interactive if hosted on a
-            Runestone server.
-            Octave is meant to be a drop-in replacement for Matlab.
-        </p>
-
-        <listing xml:id="program-activecode-octave">
-            <title>A simple Octave program</title>
-
-            <program xml:id="octave-simple" label="octave-simple" interactive="activecode" language="octave">
-                <code>
-                x = 2 + 2
-                printf("%d\n", x)
-                </code>
-            </program>
-        </listing>
-
-        <p>
-            Likewise, a Kotlin program will only be interactive if hosted on a
-            Runestone server.
-        </p>
-
-        <listing xml:id="program-activecode-kotlin">
-            <title>A simple Kotlin program</title>
-
-            <program xml:id="kotlin-hello-world" label="kotlin-hello-world" interactive="activecode" language="kotlin">
-                <code>
-                fun main() {
-                    println("Hello, world!!")
-                }
-                </code>
-            </program>
-        </listing>
-
-        <p>
-            A language not supported by Runestone Services will always be
-            rendered static.
-        </p>
-
-        <listing xml:id="program-mistake-pascal">
-            <title>
-                A Pascal program that cannot be interactive on Runestone
-            </title>
-
-            <program xml:id="pascal-mistake" label="pascal-mistake" interactive="activecode" language="pascal">
-                <code>
-                program HelloWorld;
-                begin
-                  WriteLn('Hello, world!');
-                end.
-                </code>
-            </program>
-        </listing>
-
-        <p>
-            The <attr>highlight-lines</attr> works on ActiveCode programs, but
-            the highlighted lines are only shown when viewing the initial code.
-            Any version of the code that the reader has edited may have shifted
-            lines of code and thus highlighting might affect the wrong lines,
-            causing confusion.
-        </p>
-
-        <program interactive="activecode" language="python" label="program-activecode-highlights" highlight-lines="1-2,5">
-            def add(a, b):
-                return a + b
-
-            # Use the function
-            result = add(2, 3)
-            if result == 5:
-                print("Test passed")
-            else:
-                print("Test failed")
-        </program>
-        <p>
-            A program can have a <tag>preamble</tag> and/or <tag>postamble</tag>
-            which are added to the code that the user writes before it is run.
-            They are visible by default, but can be made invisible with
-            <attr>visible</attr> set to <c>"no"</c>.
-            When visible, the code editor will prevent those regions from being
-            modified.
-            The indentation for lines in the <c>preamble/code/postamble</c>
-            elements will be calculated relative to each other - make sure to
-            indent them all to a similar extent.
-            (In the source for the sample below, the <c># TODO...</c> is
-            intentially indented one stop extra so that the user's code is part
-            of the <c>add</c> function.
-        </p>
-
-        <p>
-            <tag>tests</tag> are similar to <tag>postamble</tag> in that it
-            represents code that is added to the users submission.
-            However, <tag>tests</tag> is intended specifically for unit testing
-            code (see examples below for unit testing in Python, Java, C++,
-            SQL).
-            Tests are invisble by default and can be made visible with
-            <attr>visible</attr> set to <c>"yes"</c>.
-            For historical reasons, the indentation of the <tag>tests</tag> is
-            treated separately from the rest of the program.
-        </p>
-        <!-- This example also appears in the PreTeXt Guide (doc/guide/author/topics.xml).  Apply any edit to both copies. -->
-        <listing>
-            <title>A Python program with preamble/postamble</title>
-
-            <program interactive="activecode" language="python" label="program-activecode-python-ambles">
-                <preamble>
-                def add(a, b):
-                </preamble>
-                <code>
-                    # TODO - complete the add function
-
-                </code>
-                <postamble>
-                # Use the function
-                result = add(2, 3)
-                if result == 5:
-                    print("Test passed")
-                else:
-                    print("Test failed")
-                </postamble>
-            </program>
-        </listing>
-
-        <p>
-            Here is the same Python program from the previous section, but now
-            with a <tag>preamble</tag> and <tag>postamble</tag> that are
-            invisible.
-            The user will not see the code that is added to their submission.
-            Not actually useful in this case, but it might be if you wanted to
-            hide boilerplate setup from the reader.
-        </p>
-
-        <listing>
-            <title>A Python program with invisible pre/post ambles</title>
-
-            <program interactive="activecode" language="python" label="program-activecode-python-ambles-invisible">
-                <preamble visible="no">
-                def add(a, b):
-                </preamble>
-                <code>
-                    # TODO - complete the add function
-                </code>
-                <postamble visible="no">
-
-                # Use the function
-                result = add(2, 3)
-                if result == 5:
-                    print("Test passed")
-                else:
-                    print("Test failed")
-                </postamble>
-            </program>
-        </listing>
-
-        <p>
-            The following Python program is in a <tag>listing</tag> since we
-            will want to reference it shortly.
-            The program does not do very much, it just defines four variables
-            whose values are lists of statistics.
-            It should run, and there will be no syntax errors, but it is a bit
-            boring since there is no output.
-            Note that it does not have an <attr>language</attr> and is relying
-            on the default one specified in <tag>docinfo/programs</tag>
-        </p>
-
-        <listing xml:id="listing-python-included">
-            <title>A Python program that defines some statistics</title>
-
-            <program xml:id="python-statistics" interactive="activecode" label="statistics">
-                <code>
-                loan_amount = [1250.0, 500.0, 1450.0, 200.0, 700.0, 100.0, 250.0, 225.0, 1200.0, 150.0, 600.0, 300.0, 700.0, 125.0, 650.0, 175.0, 1800.0, 1525.0, 575.0, 700.0, 1450.0, 400.0, 200.0, 1000.0, 350.0]
-
-                country_name = ['Azerbaijan', 'El Salvador', 'Bolivia', 'Paraguay', 'El Salvador', 'Philippines', 'Philippines', 'Nicaragua', 'Guatemala', 'Philippines', 'Paraguay', 'Philippines', 'Bolivia', 'Philippines', 'Philippines', 'Madagascar', 'Georgia', 'Uganda', 'Kenya', 'Tajikistan', 'Jordan', 'Kenya', 'Philippines', 'Ecuador', 'Kenya']
-
-                time_to_raise = [193075.0, 1157108.0, 1552939.0, 244945.0, 238797.0, 1248909.0, 773599.0, 116181.0, 2288095.0, 51668.0, 26717.0, 48030.0, 1839190.0, 71117.0, 580401.0, 800427.0, 1156218.0, 1166045.0, 2924705.0, 470622.0, 24078.0, 260044.0, 445938.0, 201408.0, 2370450.0]
-
-                num_lenders_total = [38, 18, 51, 3, 21, 1, 10, 8, 42, 1, 18, 6, 28, 5, 16, 7, 54, 1, 18, 22, 36, 12, 8, 24, 8]
-                </code>
-            </program>
-        </listing>
-
-        <p>
-            An ActiveCode running on the Runestone server (rather than in a
-            browser) can be provided with attributes that are flags to influence
-            the compiler and linker, as in this <tag>program</tag> recycled from
-            before.
-        </p>
-
-        <listing xml:id="program-activecode-java-flags">
-            <title>
-                A Java program, interactive on a <pubtitle>Runestone</pubtitle>
-                server, with compiler and linker flags
-            </title>
-
-            <program xml:id="java-hello-world-flags" label="java-hello-world-flags" interactive="activecode" language="java" compiler-args="-g" linker-args="-s">
-                <code>
-                import javax.swing.JFrame;  //Importing class JFrame
-                import javax.swing.JLabel;  //Importing class JLabel
-                public class HelloWorld {
-                    public static void main(String[] args) {
-                        JFrame frame = new JFrame();           //Creating frame
-                        frame.setTitle("Hi!");                 //Setting title frame
-                        frame.add(new JLabel("Hello, world!"));//Adding text to frame
-                        frame.pack();                          //Setting size to smallest
-                        frame.setLocationRelativeTo(null);     //Centering frame
-                        frame.setVisible(true);                //Showing frame
-                    }
-                }
-                </code>
-            </program>
-        </listing>
-
-        <p>
-            Now a programming exercise.
-            The program upcoming is going to <term>include</term> all the code
-            of the program preceding.
-            This is accomplished with an <attr>include</attr> attribute on the
-            <em>including</em> program whose value is the <attr>xml:id</attr> of
-            the <em>included</em> program.
-            So by running the next program, it should pass all of its three
-            tests (for example another example using unit tests, see
-            <xref ref="unit-test-example"/> ).
-            Now reload the page, do not run the program in the listing, and then
-            see that the program in the exercise still runs correctly.
-        </p>
-
-        <p>
-            You'll see nothing that tells the reader that the one chunk of code
-            is prefacing the other.
-            And in static formats it might be even less obvious.
-            So you will want to say <em>something</em> to alert the reader.
-            Here it is easy: <xref ref="exercise-python-including"/> includes
-            all the code from <xref ref="listing-python-included"/>.
-        </p>
-
-        <p>
-            This program also makes use of <attr>autorun</attr> to execute on
-            page load and the <attr>codelens</attr> to disable the codelens
-            feature.
-        </p>
-
-        <exercise xml:id="exercise-python-including" label="exercise-python-including">
-            <title>A Python program, including another</title>
-
-            <statement>
-                <p>
-                    Compute the total amount of money loaned and store it in the
-                    variable <c>loan_total</c>.
-                </p>
-            </statement>
-
-            <program autorun="yes" codelens="no" xml:id="python-summation" interactive="activecode" language="python" label="python-sum-total" include="python-statistics">
-                <code>
-                loan_total = 0
-                for loan in loan_amount:
-                    loan_total += loan
-                print(loan_total)
-                </code>
-                <tests>
-                    from unittest.gui import TestCaseGui
-
-                class MyTests(TestCaseGui):
-
-                    def testOne(self):
-                        self.assertTrue('loan_total' in self.getEditorText(), "you need a loan_total variable")
-                        self.assertEqual(loan_total, sum(loan_amount), "Use the accumulator pattern to add up all the loans")
-                        self.assertFalse('sum(' in self.getEditorText(), "you may not use sum()")
-
-                MyTests().main()
-                </tests>
-            </program>
-        </exercise>
-
-        <p>
-            Exact same exercise again, but now we include <em>three</em>
-            programs.
-            We first get the simple <q>Hello, world!</q> program at
-            <xref ref="program-activecode-python"/>, then the program defining
-            the variables with lists of statistics at
-            <xref ref="listing-python-included"/>, and finally the program from
-            the appendix just to test linking to material there.
-        </p>
-
-        <p>
-            This program also makes use of <attr>hidecode</attr> to initially
-            keep the code hidden and <attr>download</attr> to enable a file
-            download of the program (that includes all the included code).
-        </p>
-
-        <exercise xml:id="exercise-python-including-two" label="exercise-python-including-two">
-            <title>A Python program, including two others</title>
-
-            <statement>
-                <p>
-                    Compute the total amount of money loaned and store it in the
-                    variable <c>loan_total</c>.
-                </p>
-            </statement>
-
-            <program xml:id="python-summation-two" interactive="activecode" language="python" label="python-sum-total-two" include="python-hello-world python-statistics program-appendix" hidecode="yes" download="yes">
-                <code>
-                loan_total = 0
-                for loan in loan_amount:
-                    loan_total += loan
-                print(loan_total)
-                </code>
-                <tests>
-                    from unittest.gui import TestCaseGui
-
-                class MyTests(TestCaseGui):
-
-                    def testOne(self):
-                        self.assertTrue('loan_total' in self.getEditorText(), "you need a loan_total variable")
-                        self.assertEqual(loan_total, sum(loan_amount), "Use the accumulator pattern to add up all the loans")
-                        self.assertFalse('sum(' in self.getEditorText(), "you may not use sum")
-
-                MyTests().main()
-                </tests>
-            </program>
-        </exercise>
-
-        <p>
-            Here is an activecode with <attr>language</attr> set to <c>sql</c>
-            uses the <attr>database</attr> to load a SQLite database file.
-        </p>
 
         <exercise xml:id="exercise-sql-using-db" label="exercise-sql-using-db">
             <title>An SQL program that uses an SQLite database file</title>
@@ -516,123 +156,25 @@
             </program>
         </exercise>
 
-        <p>
-            Now a C++ program that is spread across multiple files.
-            This example will only be interactive on a Runestone server.
-        </p>
+        <listing>
+            <title>A Python program with pre/post ambles</title>
+            <program interactive='activecode' language="python" label="program-activecode-python-ambles-invisible">
+                <preamble visible="yes">
+                def add(a, b):
+                </preamble>
+                <code>
+                    # TODO - complete the add function
+                </code>
+                <postamble visible="yes">
 
-        <p>
-            First, we have a <c>.h</c> file that defines an
-            <attr>filename</attr>.
-            It has an <attr>xml:id</attr> so other elements can reference it.
-            It also has an <attr>label</attr> which is it's unique identifier in
-            the Runestone database.
-            (The label is intentionally different than the xml:id for
-            demonstration purposes, but they can be the same.) The
-            <attr>filename</attr> is used to indicate what to name to use when
-            the contents of the element are written to a file on the server -
-            other program code and/or tools on the server can look for it using
-            this name.
-            The <attr>filename</attr> need not be unique <mdash/> we could have
-            multiple programs with <attr>filename="add.h"</attr>.
-            As we will see below, the author specifies which <q>version</q> of a
-            file should be used in any given location with its unique xml:id.
-        </p>
-
-        <p>
-            The <tag>program</tag> is inside of a <tag>listing</tag> so that we
-            have a place to add a title and so that we can reference the code
-            sample, including that title, with an <tag>xref</tag> from
-            elsewhere.
-            The <tag>title</tag> of the <tag>listing</tag> is rendered with the
-            program.
-            It is also used if an <tag>xref</tag> links to the
-            <tag>listing</tag> using <attr>text="title"</attr>.
-        </p>
-
-        <listing xml:id="addh-v1-listing">
-            <title>
-                add.h (version 1) - A very simple header file that lacks header
-                guards.
-            </title>
-
-            <program filename="add.h" xml:id="addh-v1" label="addh-v1-label" language="cpp">
-                int add(int a, int b);
+                # Use the function
+                result = add(2, 3)
+                if result == 5:
+                    print("Test passed")
+                else:
+                    print("Test failed")
+                </postamble>
             </program>
         </listing>
 
-        <p>
-            Next, a <c>.cpp</c> file.
-            Note that because it is part of an exercise, the <attr>label</attr>
-            is applied to the exercise that contains it.
-            The <attr>xml:id</attr> and <attr>filename</attr> still belong on
-            the program itself.
-        </p>
-
-        <p>
-            It also has <attr>extra-compiler-args</attr>.
-            These will be added to any default compiler args for the book.
-            In this case, the <c>-c</c> indicates that we only want to compile
-            this file when it is <q>Run</q> and not try to link it or actually
-            run it.
-        </p>
-
-        <exercise label="addcpp-v1">
-            <statement>
-                <p>
-                    You can leave this code as is or modify it.
-                    When you click <q>Run</q>, the code will be compiled.
-                    However, it will not be run as this is not a standalone
-                    program.
-                    To run it, use the full program below.
-                </p>
-            </statement>
-
-            <program filename="add.cpp" xml:id="addcpp-v1" extra-compiler-args="-c" interactive="activecode" language="cpp">
-                int add(int a, int b) {
-                    return a + b;
-                }
-            </program>
-        </exercise>
-
-        <p>
-            Finally, the core program.
-            <attr>add-files</attr> is used to specify (by xml:id) the files that
-            need to be added to the program directory.
-            <attr>compile-also</attr> specifies files that must be compiled with
-            this source file (they will be assumed to be also part of
-            <attr>add-files</attr> ).
-            Notice that when using <attr>add-files</attr> to reference code we
-            want to include, we use the xml:id of the target program - it has
-            the contents we want to include.
-            When making a textual reference with an <tag>xref</tag> we can't
-            link to the program, as it lacks the contextual information required
-            to create a valid reference.
-            Instead, we should link to a listing (or some other container) that
-            surrounds the code, like this: <xref ref="addh-v1-listing"/> or
-            <xref ref="addh-v1-listing" text="title"/>
-        </p>
-
-        <program label="multiple-file-program" interactive="activecode" add-files="addh-v1" compile-also="addcpp-v1" language="cpp">
-            <![CDATA[
-            #include "add.h"
-            #include <iostream>
-            using namespace std;
-            int main() {
-                int a = 1;
-                int b = 2;
-                cout << "The sum of " << a << " and " << b << " is " << add(a, b) << endl;
-            }]]>
-        </program>
-        <p>
-            Note that there is a cross page test of <attr>add-files</attr>
-            located in <xref ref="runestone-hodgepodge"/>
-        </p>
-
-        <p>
-            A nonsense paragraph just to check on spacing.
-            A nonsense paragraph just to check on spacing.
-            A nonsense paragraph just to check on spacing.
-            A nonsense paragraph just to check on spacing.
-        </p>
-    </chapter>
+    </section>
