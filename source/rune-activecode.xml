@@ -1,82 +1,100 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
-    <section xml:id="activecode">
-        <title>ActiveCode</title>
-        
-        <observation>
-            <p>
-                Known accessibility issues:
-                <ul>
-                    <li>
-                        <p>
-                            Before the Activecode text entry area there is an empty textbox that is a tab stop for screen readers. This is a known issue with the CodeMirror 5 that renders the text entry area.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Line highlights and locked regions are not announced to screen readers. This is a known issue with the CodeMirror 5 that renders the text entry area.
-                        </p>
-                    </li>
-                    <li>
-                        <p>
-                            Optional Codelens program traces have accessibility issues with screen readers. See <xref ref="code-lens"/> for details.
-                        </p>
-                    </li>
-                </ul>
-            </p>
+<section xml:id="activecode">
+    <title>ActiveCode</title>
 
-            <p>
-                Last WAVE review: 2026-09-28
-            </p>
+    <observation>
+        <p>
+            Known accessibility issues:
+            <ul>
+                <li>
+                    <p>
+                        Before the Activecode text entry area there is an empty textbox that is a
+                        tab stop for screen readers.
+                        This is a known issue with the CodeMirror 5 that renders the text entry
+                        area.
+                    </p>
+                </li>
 
-            <p>
-                Last screen reader review: 2026-09-28
-            </p>
-        </observation>
+                <li>
+                    <p>
+                        Line highlights and locked regions are not announced to screen readers.
+                        This is a known issue with the CodeMirror 5 that renders the text entry
+                        area.
+                    </p>
+                </li>
 
-        <listing xml:id="program-activecode-python">
-            <title>
-                An interactive Python program
-            </title>
+                <li>
+                    <p>
+                        Optional Codelens program traces have accessibility issues with screen
+                        readers.
+                        See <xref ref="code-lens"/> for details.
+                    </p>
+                </li>
+            </ul>
+        </p>
 
-            <program xml:id="python-hello-world" interactive="activecode" language="python" download="yes" label="hello-world">
-                <code>
+        <p>
+            Last WAVE review: 2026-09-28
+        </p>
+
+        <p>
+            Last screen reader review: 2026-09-28
+        </p>
+    </observation>
+
+    <listing xml:id="program-activecode-python">
+        <title>An interactive Python program</title>
+
+        <program xml:id="python-hello-world" interactive="activecode" language="python" download="yes" label="python-hello-world">
+            <code>
                 print("Hello, World!")
-                </code>
-            </program>
-        </listing>
+            </code>
+        </program>
+    </listing>
 
-        <listing xml:id="program-activecode-python-autorun">
-            <title>
-                An interactive Python program that runs automatically when the page loads
-            </title>
+    <listing xml:id="program-activecode-html">
+        <title>An interactive HTML sample to test iframe rendering announcement</title>
 
-            <program interactive="activecode" language="python" autorun="yes" label="hello-world-autorun">
-                <code>
+        <program interactive="activecode" language="html" download="yes" label="html-hello-world">
+            <code>
+                    <![CDATA[ 
+                <h1>Hello, World!</h1>
+                <p>This is a sample HTML page.</p>
+                    ]]>
+            </code>
+        </program>
+    </listing>
+
+    <listing xml:id="program-activecode-python-autorun">
+        <title>An interactive Python program that runs automatically when the page loads</title>
+
+        <program interactive="activecode" language="python" autorun="yes" label="hello-world-autorun">
+            <code>
                 print("Hello, World!")
-                </code>
-            </program>
-        </listing>
+            </code>
+        </program>
+    </listing>
 
-        <listing xml:id="program-activecode-python-autorun-error">
-            <title>
-                An interactive Python program that runs automatically when the page loads, but has an error
-            </title>
+    <listing xml:id="program-activecode-python-autorun-error">
+        <title>
+            An interactive Python program that runs automatically when the page loads, but has an
+            error
+        </title>
 
-            <program interactive="activecode" language="python" autorun="yes" label="hello-world-autorun-error">
-                <code>
+        <program interactive="activecode" language="python" autorun="yes" label="hello-world-autorun-error">
+            <code>
                 print("Hello, World!")
                 print(ooops)
-                </code>
-            </program>
-        </listing>
+            </code>
+        </program>
+    </listing>
 
+    <listing>
+        <title>A program with line highlights</title>
 
-        <listing>
-            <title>A program with line highlights</title>
-
-            <program interactive="activecode" language="python" label="program-activecode-highlights" highlight-lines="1-2,5">
+        <program interactive="activecode" language="python" label="program-activecode-highlights" highlight-lines="1-2,5">
                 def add(a, b):
                     return a + b
 
@@ -86,22 +104,21 @@
                     print("Test passed")
                 else:
                     print("Test failed")
-            </program>
-        </listing>
+        </program>
+    </listing>
 
+    <listing>
+        <title>A Python program with automated tests</title>
 
-        <listing>
-            <title>A Python program with automated tests</title>
-
-            <program interactive="activecode" language="python" label="python-sum-total-two" >
-                <code>
+        <program interactive="activecode" language="python" label="python-sum-total-two">
+            <code>
                 loan_amount = [1000, 2000, 3000, 4000]
                 loan_total = 0
                 for loan in loan_amount:
                     loan_total += loan
                 print(loan_total)
-                </code>
-                <tests>
+            </code>
+            <tests>
                 from unittest.gui import TestCaseGui
 
                 class MyTests(TestCaseGui):
@@ -112,14 +129,15 @@
                         self.assertFalse('sum(' in self.getEditorText(), "you may not use sum")
 
                 MyTests().main()
-                </tests>
-            </program>
-        </listing>
+            </tests>
+        </program>
+    </listing>
 
-        <listing>
-            <title>A C++ program with stdin</title>
-            <program interactive="activecode" label="hello-world-cpp" language="cpp" compiler-args="-std=c++17,-Wall,-g" linker-args="-g,-s">
-                <code>
+    <listing>
+        <title>A C++ program with stdin</title>
+
+        <program interactive="activecode" label="hello-world-cpp" language="cpp" compiler-args="-std=c++17,-Wall,-g" linker-args="-g,-s">
+            <code>
                     #include &lt;iostream&gt;
                     #include &lt;string&gt;
                     using namespace std;
@@ -129,43 +147,75 @@
                         cout &lt;&lt; "Hello, " &lt;&lt; name &lt;&lt; endl;
                         return 0;
                     }
-                </code>
-                <stdin>Jane</stdin>
-            </program>
-        </listing>
+            </code>
+            <stdin>Jane</stdin>
+        </program>
+    </listing>
 
-        <exercise xml:id="exercise-sql-using-db" label="exercise-sql-using-db">
-            <title>An SQL program that uses an SQLite database file</title>
+    <p>
+        Delays in compiling and running C++ programs can be significant, so test how that affects
+        aria-live regions.
+    </p>
 
-            <statement>
-                <p>
-                    Select all the columns of all the rows in the <c>test</c>
-                    database table.
-                </p>
-            </statement>
+    <listing xml:id="program-activecode-cpp">
+        <title>An interactive C++ sample</title>
 
-            <program xml:id="sql-using-db" interactive="activecode" language="sql" label="sql-using-db" database="sql/test.db">
-                <code>
+        <program interactive="activecode" language="cpp" label="cpp-hello-world">
+            <code>
+                    <![CDATA[
+                // let's make the compiler sweat... still probably too fast 
+                #include <iostream>
+                #include <string>
+                #include <stdexcept>
+                #include <algorithm>
+                #include <queue>
+                #include <vector>
+                #include <map>
+                #include <unordered_map>
+                #include <format>
+                #include <regex>
+                using namespace std;
+                int main() {
+                    cout << "Hello, World!" << endl;
+                    return 0;
+                }
+                    ]]>
+            </code>
+        </program>
+    </listing>
+
+    <exercise xml:id="exercise-sql-using-db" label="exercise-sql-using-db">
+        <title>An SQL program that uses an SQLite database file</title>
+
+        <statement>
+            <p>
+                Select all the columns of all the rows in the <c>test</c> database table.
+            </p>
+        </statement>
+
+        <program xml:id="sql-using-db" interactive="activecode" language="sql" label="sql-using-db" database="sql/test.db">
+            <code>
                     SELECT * FROM test
-                </code>
-                <tests>
-                    assert 1,1 == world
+            </code>
+            <tests>
+                assert 1,1 == world
                     assert 0,1 == hello
                     assert 2,1 == 35
-                </tests>
-            </program>
-        </exercise>
+            </tests>
+        </program>
+    </exercise>
 
-        <listing>
-            <title>A Python program with pre/post ambles</title>
-            <program interactive='activecode' language="python" label="program-activecode-python-ambles-invisible">
-                <preamble visible="yes">
+    <listing>
+        <title>A Python program with pre/post ambles</title>
+
+        <program interactive="activecode" language="python" label="program-activecode-python-ambles-invisible">
+            <preamble visible="yes">
                 def add(a, b):
-                </preamble>
-                <code>
+            </preamble>
+            <code>
                     # TODO - complete the add function
-                </code>
-                <postamble visible="yes">
+            </code>
+            <postamble visible="yes">
 
                 # Use the function
                 result = add(2, 3)
@@ -173,8 +223,7 @@
                     print("Test passed")
                 else:
                     print("Test failed")
-                </postamble>
-            </program>
-        </listing>
-
-    </section>
+            </postamble>
+        </program>
+    </listing>
+</section>
