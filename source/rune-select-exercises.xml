@@ -1,41 +1,46 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
-    <exercises xml:id="select-exercises">
-        <title>Select Exercises</title>
+<section xml:id="sec-select-exercises">
+    <title>Select Exercises</title>
+    
+    <observation>
+        <p>
+            Known accessibility issues:
+            <ul>
+                <li>Selecting an alternate format does not announce new content.</li>
+                <li>
+                    Content for the alternate format is placed out of the visual order. You can reach it with tab, but it is not clear where it is located in the visual order.
+                </li>
+            </ul>
+        </p>
 
-        <introduction>
-            <p>
-                These <term>select</term> questions specify a list of extant
-                questions, and the reader, or Runestone, selects questions from
-                the list to be graded (in different ways).
-                They are only really functional with a database of students in a
-                course, i.e.
-                <nbsp/> when hosted on Runestone.
-            </p>
-        </introduction>
-        <!-- Select one at random -->
-        <exercise label="question-select">
-            <title>Three-way Select Question</title>
+        <p>
+            Last WAVE review: 2026-10-30.
+        </p>
 
-            <select grade="random" questions="true-false-one multiple-choice-one matching-one"/>
-        </exercise>
-        <!-- Select according to a student's group (A or B) -->
-        <exercise label="ab-experiment">
-            <title>A/B Experiment Select Question</title>
+        <p>
+            Last screen reader review: 2026-10-30
+        </p>
+        
+        <p>
+            Github issues:
+            <ul>
+                <li><url href="https://github.com/RunestoneInteractive/rs/issues/15616457">#1645</url></li>
+            </ul>
+        </p>
+    </observation>
 
-            <select grade="ab-experiment" questions="true-false-one multiple-choice-one" experiment-name="sample-book"/>
-        </exercise>
-        <!-- Select grades first alwys, others to view -->
-        <exercise label="toggle-first">
-            <title>Grade First Question</title>
+    <!-- Select grades first alwys, others to view -->
+    <exercise label="toggle-first">
+        <title>Grade First Question</title>
 
-            <select grade="first" questions="true-false-one multiple-choice-one"/>
-        </exercise>
-        <!-- Select grades any one reader chooses -->
-        <exercise label="toggle-any">
-            <title>Grade Any Question</title>
+        <select grade="first" questions="true-false-one multiple-choice-one"/>
+    </exercise>
+    <!-- Select grades any one reader chooses -->
+    <exercise label="toggle-any">
+        <title>Grade Any Question</title>
 
-            <select grade="any" questions="true-false-one multiple-choice-one"/>
-        </exercise>
-    </exercises>
+        <select grade="any" questions="true-false-one multiple-choice-one"/>
+    </exercise>
+</section>
