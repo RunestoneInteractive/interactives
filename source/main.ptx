@@ -82,20 +82,8 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
                     deprecated, or simply not as widely used.
                 </p>
             </introduction>
-            <!-- 
+            <xi:include href="./rune-code-lens.xml"/>
             <xi:include href="./rune-select-exercises.xml"/>
-            <xi:include href="./rune-fill-in-exercises-old.xml"/>
-            <xi:include href="./rune-fill-in-exercises.xml"/>
-            <xi:include href="./rune-fill-in-literal-exercises.xml"/>
-            <xi:include href="./rune-runestone-hodgepodge.xml"/>
-            <xi:include href="./rune-reading-questions.xml"/>
-            <xi:include href="./rune-worksheet-groupwork.xml"/>
-            <xi:include href="./rune-groupwork-title.xml"/>
-            <xi:include href="./rune-select-exercises.xml"/>
-            <xi:include href="./rune-chapter-exam.xml"/>
-             -->
         </chapter>
-        <!-- <xi:include href="./backmatter.xml"/> -->
-        <!-- GFDL, Hints, Notation -->
     </book>
 </pretext>
