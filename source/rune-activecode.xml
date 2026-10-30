@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <!-- Split out of rune.xml for the sample "Runestone Interactives" chapter -->
-<section xml:id="activecode">
+<section>
     <title>ActiveCode</title>
 
     <observation>
@@ -41,6 +41,13 @@
 
         <p>
             Last screen reader review: 2026-09-28
+        </p>
+
+        <p>
+            Github issues:
+            <ul>
+                <li><url href="https://github.com/RunestoneInteractive/rs/issues/661">#661</url></li>
+            </ul>
         </p>
     </observation>
 
