@@ -69,6 +69,7 @@ along with MathBook XML.  If not, see <http://www.gnu.org/licenses/>.
             <xi:include href="./rune-parsons-exercises.xml"/>
             <xi:include href="./rune-horizontal-parsons-exercises.xml"/>
             <xi:include href="./rune-activecode.xml"/>
+            <xi:include href="./rune-atomic-video.xml"/>
         </chapter>
 
         <chapter xml:id="add-interactives">
