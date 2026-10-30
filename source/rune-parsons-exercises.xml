@@ -248,10 +248,6 @@
                     [Ed.
                     This version has numbered blocks, online they are on the left end of the block.]
                 </p>
-
-                <p>
-                    This reprises <xref ref="sieve-primes"/>.
-                </p>
             </statement>
             <blocks numbered="left">
                 <block order="6">
